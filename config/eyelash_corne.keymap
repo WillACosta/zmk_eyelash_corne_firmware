@@ -43,11 +43,12 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <180>;
-            quick-tap-ms = <175>;
+            tapping-term-ms = <250>;
+            quick-tap-ms = <100>;
             flavor = "tap-preferred";
             hold-trigger-key-positions = <0 44 0 1 2 3 4 5 13 14 15 16 17 18 28 29 30 31 32 33 42 43 45 46 47>;
             hold-trigger-on-release;
+            hold-while-undecided;
         };
 
         HML: HML {
@@ -56,11 +57,38 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <280>;
-            quick-tap-ms = <175>;
+            tapping-term-ms = <250>;
+            quick-tap-ms = <100>;
             flavor = "tap-preferred";
             hold-trigger-key-positions = <7 8 9 10 11 12 22 23 24 25 26 27 36 37 38 39 40 41 45 46 47 42 43 44>;
             hold-trigger-on-release;
+            hold-while-undecided;
+        };
+
+        LLT: LLT {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LLT";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <250>;
+            quick-tap-ms = <100>;
+            flavor = "tap-preferred";
+            hold-while-undecided;
+            hold-trigger-key-positions = <7 8 9 10 11 12 22 23 24 25 26 27 36 37 38 39 40 41 45 46 47 42 43 44>;
+        };
+
+        LTR: LTR {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LTR";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <250>;
+            quick-tap-ms = <100>;
+            flavor = "tap-preferred";
+            hold-while-undecided;
+            hold-trigger-key-positions = <0 1 2 3 4 5 13 14 15 16 17 18 28 29 30 31 32 33 34 42 43 44 45 46 47>;
         };
     };
 
@@ -85,54 +113,68 @@
             bindings = <&soft_off>;
             key-positions = <1 15 29>;
         };
+
+        Tab {
+            bindings = <&kp TAB>;
+            key-positions = <1 2>;
+        };
     };
 
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
+        base_layer {
             display-name = "QWERTY";
             bindings = <
-&kp TAB                  &kp Q  &kp W  &kp E     &kp R  &kp T                             &kp UP                &kp Y       &kp U  &kp I         &kp O    &kp P          &kp BSPC
-&kp LEFT_SHIFT           &kp A  &kp S  &kp D     &kp F  &kp G                   &kp LEFT  &kp ENTER  &kp RIGHT  &kp H       &kp J  &kp K         &kp L    &kp SEMICOLON  &kp APOS
-&mt LEFT_CONTROL ESCAPE  &kp Z  &kp X  &kp C     &kp V  &kp B      &kp SPACE              &kp DOWN              &kp N       &kp M  &kp COMMA     &kp DOT  &kp FSLH       &mt RIGHT_CONTROL ESCAPE
-                                       &kp LGUI  &mo 2  &kp SPACE                                               &kp RETURN  &mo 1  &kp LEFT_ALT
+&kp TAB                  &kp Q            &kp W            &kp E              &kp R                &kp T                             &kp UP                &kp Y       &kp U                 &kp I               &kp O            &kp P                &kp BSPC
+&kp LEFT_SHIFT           &HML LEFT_GUI A  &HML LEFT_ALT S  &HML LEFT_SHIFT D  &HML LEFT_CONTROL F  &LLT 3 G                &kp LEFT  &kp ENTER  &kp RIGHT  &kp H       &HMR J RIGHT_CONTROL  &HMR RIGHT_SHIFT K  &HMR LEFT_ALT L  &HMR RIGHT_GUI SEMI  &kp APOS
+&mt LEFT_CONTROL ESCAPE  &kp Z            &kp X            &kp C              &kp V                &kp B      &kp SPACE              &kp DOWN              &kp N       &kp M                 &kp COMMA           &kp DOT          &kp FSLH             &mt RIGHT_CONTROL ESCAPE
+                                                           &kp LGUI           &mo 1                &kp SPACE                                               &kp RETURN  &mo 2                 &kp LEFT_ALT
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
 
-        lower_layer {
+        symbol_layer {
+            display-name = "SYMBOL";
+            bindings = <
+&kp DELETE  &kp EXCL  &kp AT  &kp HASH       &kp DLLR          &kp PRCNT                                    &mmv MOVE_UP                     &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp BACKSPACE
+&trans      &trans    &trans  &kp BACKSLASH  &kp LEFT_BRACKET  &kp RIGHT_BRACKET            &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp MINUS  &kp EQUAL  &kp GRAVE  &trans    &trans    &trans
+&trans      &trans    &trans  &kp PIPE       &kp LEFT_BRACE    &kp RIGHT_BRACE    &trans                    &mmv MOVE_DOWN                   &kp UNDER  &kp PLUS   &kp TILDE  &trans    &trans    &trans
+                              &trans         &none             &trans                                                                        &trans     &mo 5      &trans
+            >;
+
+            sensor-bindings = <&scroll_encoder>;
+        };
+
+        nav_layer {
             display-name = "NAV";
             bindings = <
 &trans  &kp N1                &kp N2                &kp N3          &kp N4        &kp N5                                      &mmv MOVE_UP                     &kp N6    &kp N7    &kp N8     &kp N9         &kp N0  &kp DEL
 &trans  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &kp C_PREVIOUS  &kp C_PP      &kp C_NEXT                  &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp LEFT  &kp DOWN  &kp UP     &kp RIGHT      &trans  &trans
 &trans  &trans                &trans                &kp C_MUTE      &kp C_VOL_DN  &kp C_VOL_UP  &kp C_MUTE                    &mmv MOVE_DOWN                   &kp HOME  &kp END   &kp PG_UP  &kp PAGE_DOWN  &trans  &trans
-                                                    &trans          &mo 3         &trans                                                                       &trans    &none     &trans
+                                                    &trans          &mo 4         &trans                                                                       &trans    &none     &trans
             >;
 
             sensor-bindings = <&scroll_encoder>;
             label = "Number";
         };
 
-        raise_layer {
-            display-name = "SYMBOL";
+        mouse_layer {
             bindings = <
-&kp DELETE  &kp EXCL  &kp AT  &kp HASH       &kp DLLR          &kp PRCNT                                    &mmv MOVE_UP                     &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp BACKSPACE
-&trans      &trans    &trans  &kp BACKSLASH  &kp LEFT_BRACKET  &kp RIGHT_BRACKET            &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp MINUS  &kp EQUAL  &kp GRAVE  &trans    &trans    &trans
-&trans      &trans    &trans  &kp PIPE       &kp LEFT_BRACE    &kp RIGHT_BRACE    &trans                    &mmv MOVE_DOWN                   &kp UNDER  &kp PLUS   &kp TILDE  &trans    &trans    &trans
-                              &trans         &none             &trans                                                                        &trans     &mo 4      &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans          &mkp MB4        &mkp LCLK     &mkp RCLK       &mkp MB5         &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &mmv MOVE_LEFT  &mmv MOVE_UP  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans            &trans          &trans          &trans        &trans          &trans           &trans  &trans
+                        &trans  &trans  &trans                                    &trans          &trans        &trans
             >;
-
-            sensor-bindings = <&scroll_encoder>;
         };
 
-        outer_layer {
+        fn_layer {
             display-name = "Fn";
             bindings = <
 &trans  &kp F1           &kp F2           &kp F3           &kp F4           &kp F5                                         &mmv MOVE_UP                     &kp F6          &kp F7          &kp F8        &kp F9           &kp F10  &kp F11
 &trans  &rgb_ug RGB_HUI  &rgb_ug RGB_EFF  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI  &rgb_ug RGB_ON                 &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &trans   &kp F12
-&trans  &rgb_ug RGB_HUD  &rgb_ug RGB_EFR  &rgb_ug RGB_SAD  &rgb_ug RGB_BRD  &rgb_ug RGB_OFF  &kp C_MUTE                    &mmv MOVE_DOWN                   &mkp MB4        &mkp MB5        &trans        &trans           &trans   &kp CAPS
+&trans  &rgb_ug RGB_HUD  &rgb_ug RGB_EFR  &rgb_ug RGB_SAD  &rgb_ug RGB_BRD  &rgb_ug RGB_OFF  &kp C_MUTE                    &mmv MOVE_DOWN                   &trans          &trans          &trans        &trans           &trans   &kp CAPS
                                           &trans           &trans           &trans                                                                          &trans          &trans          &trans
             >;
 
@@ -140,26 +182,15 @@
             label = "FN";
         };
 
-        olympus_layer {
+        extra_layer {
             bindings = <
-&trans  &trans        &trans        &trans        &trans          &trans                          &trans          &trans        &kp N7        &kp NUMBER_8  &kp NUMBER_9  &trans  &kp BACKSPACE
+&trans  &trans        &trans        &trans        &trans          &trans                          &trans          &trans        &kp N7        &kp NUMBER_8  &kp NUMBER_9  &trans  &trans
 &trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3    &bt BT_SEL 4            &trans  &trans  &trans  &trans        &kp NUMBER_4  &kp N5        &kp NUMBER_6  &trans  &trans
 &trans  &out OUT_USB  &out OUT_BLE  &bt BT_CLR    &bt BT_CLR_ALL  &trans        &trans            &trans          &kp NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &trans
                                     &trans        &trans          &trans                                          &trans        &trans        &trans
             >;
 
             label = "NUMBER";
-        };
-
-        MOUSE_LAYER {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans          &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans            &trans          &mkp LCLK       &mkp MCLK       &mkp RCLK     &trans           &trans  &trans
-                        &trans  &trans  &trans                                    &trans          &trans          &trans
-            >;
-
-            label = "MOUSE";
         };
     };
 };
