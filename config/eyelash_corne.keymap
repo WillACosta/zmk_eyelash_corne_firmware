@@ -44,11 +44,10 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <250>;
-            quick-tap-ms = <100>;
+            quick-tap-ms = <180>;
             flavor = "tap-preferred";
             hold-trigger-key-positions = <0 44 0 1 2 3 4 5 13 14 15 16 17 18 28 29 30 31 32 33 42 43 45 46 47>;
             hold-trigger-on-release;
-            hold-while-undecided;
         };
 
         HML: HML {
@@ -58,11 +57,10 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <250>;
-            quick-tap-ms = <100>;
+            quick-tap-ms = <180>;
             flavor = "tap-preferred";
             hold-trigger-key-positions = <7 8 9 10 11 12 22 23 24 25 26 27 36 37 38 39 40 41 45 46 47 42 43 44>;
             hold-trigger-on-release;
-            hold-while-undecided;
         };
 
         LLT: LLT {
@@ -74,7 +72,6 @@
             tapping-term-ms = <250>;
             quick-tap-ms = <100>;
             flavor = "tap-preferred";
-            hold-while-undecided;
             hold-trigger-key-positions = <7 8 9 10 11 12 22 23 24 25 26 27 36 37 38 39 40 41 45 46 47 42 43 44>;
         };
 
@@ -87,7 +84,6 @@
             tapping-term-ms = <250>;
             quick-tap-ms = <100>;
             flavor = "tap-preferred";
-            hold-while-undecided;
             hold-trigger-key-positions = <0 1 2 3 4 5 13 14 15 16 17 18 28 29 30 31 32 33 34 42 43 44 45 46 47>;
         };
     };
@@ -118,6 +114,16 @@
             bindings = <&kp TAB>;
             key-positions = <1 2>;
         };
+
+        HOME_CB {
+            bindings = <&kp HOME>;
+            key-positions = <22 23>;
+        };
+
+        END_CB {
+            bindings = <&kp END>;
+            key-positions = <24 25>;
+        };
     };
 
     keymap {
@@ -126,10 +132,10 @@
         base_layer {
             display-name = "QWERTY";
             bindings = <
-&kp TAB                  &kp Q            &kp W            &kp E              &kp R                &kp T                             &kp UP                &kp Y       &kp U                 &kp I               &kp O            &kp P                &kp BSPC
-&kp LEFT_SHIFT           &HML LEFT_GUI A  &HML LEFT_ALT S  &HML LEFT_SHIFT D  &HML LEFT_CONTROL F  &LLT 3 G                &kp LEFT  &kp ENTER  &kp RIGHT  &kp H       &HMR J RIGHT_CONTROL  &HMR RIGHT_SHIFT K  &HMR LEFT_ALT L  &HMR RIGHT_GUI SEMI  &kp APOS
-&mt LEFT_CONTROL ESCAPE  &kp Z            &kp X            &kp C              &kp V                &kp B      &kp SPACE              &kp DOWN              &kp N       &kp M                 &kp COMMA           &kp DOT          &kp FSLH             &mt RIGHT_CONTROL ESCAPE
-                                                           &kp LGUI           &mo 1                &kp SPACE                                               &kp RETURN  &mo 2                 &kp LEFT_ALT
+&kp TAB                  &kp Q            &kp W            &kp E                &kp R              &kp T                             &kp UP                &kp Y       &kp U               &kp I                &kp O            &kp P                &kp BSPC
+&kp LEFT_SHIFT           &HML LEFT_GUI A  &HML LEFT_ALT S  &HML LEFT_CONTROL D  &HML LEFT_SHIFT F  &LLT 3 G                &kp LEFT  &kp ENTER  &kp RIGHT  &kp H       &HMR RIGHT_SHIFT J  &HMR LEFT_CONTROL K  &HMR LEFT_ALT L  &HMR RIGHT_GUI SEMI  &kp APOS
+&mt LEFT_CONTROL ESCAPE  &kp Z            &kp X            &kp C                &kp V              &kp B      &kp SPACE              &kp DOWN              &kp N       &kp M               &kp COMMA            &kp DOT          &kp FSLH             &mt RIGHT_CONTROL ESCAPE
+                                                           &kp LGUI             &mo 1              &kp SPACE                                               &kp RETURN  &mo 2               &kp LEFT_ALT
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
@@ -162,10 +168,10 @@
 
         mouse_layer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans          &mkp MB4        &mkp LCLK     &mkp RCLK       &mkp MB5         &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &mmv MOVE_LEFT  &mmv MOVE_UP  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans            &trans          &trans          &trans        &trans          &trans           &trans  &trans
-                        &trans  &trans  &trans                                    &trans          &trans        &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans          &mkp MB4        &mkp LCLK       &mkp RCLK     &mkp MB5         &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans            &trans          &trans          &trans          &trans        &trans           &trans  &trans
+                        &trans  &trans  &trans                                    &trans          &trans          &trans
             >;
         };
 
