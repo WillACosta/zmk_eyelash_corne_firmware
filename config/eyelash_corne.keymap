@@ -132,10 +132,10 @@
         base_layer {
             display-name = "QWERTY";
             bindings = <
-&kp TAB                  &kp Q            &kp W            &kp E                &kp R              &kp T                             &kp UP                &kp Y       &kp U               &kp I                &kp O            &kp P                &kp BSPC
-&kp LEFT_SHIFT           &HML LEFT_GUI A  &HML LEFT_ALT S  &HML LEFT_CONTROL D  &HML LEFT_SHIFT F  &LLT 3 G                &kp LEFT  &kp ENTER  &kp RIGHT  &kp H       &HMR RIGHT_SHIFT J  &HMR LEFT_CONTROL K  &HMR LEFT_ALT L  &HMR RIGHT_GUI SEMI  &kp APOS
-&mt LEFT_CONTROL ESCAPE  &kp Z            &kp X            &kp C                &kp V              &kp B      &kp SPACE              &kp DOWN              &kp N       &kp M               &kp COMMA            &kp DOT          &kp FSLH             &mt RIGHT_CONTROL ESCAPE
-                                                           &kp LGUI             &mo 1              &kp SPACE                                               &kp RETURN  &mo 2               &kp LEFT_ALT
+&trans  &kp Q            &kp W            &kp E                &kp R              &kp T                             &kp UP                &kp Y       &kp U               &kp I                &kp O            &kp P                &trans
+&trans  &HML LEFT_GUI A  &HML LEFT_ALT S  &HML LEFT_CONTROL D  &HML LEFT_SHIFT F  &LLT 3 G                &kp LEFT  &kp ENTER  &kp RIGHT  &kp H       &HMR RIGHT_SHIFT J  &HMR LEFT_CONTROL K  &HMR LEFT_ALT L  &HMR RIGHT_GUI SEMI  &trans
+&trans  &kp Z            &kp X            &kp C                &kp V              &kp B      &kp SPACE              &kp DOWN              &kp N       &kp M               &kp COMMA            &kp DOT          &kp FSLH             &trans
+                                          &kp ESCAPE           &mo 1              &kp SPACE                                               &kp RETURN  &mo 2               &kp BACKSPACE
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
@@ -144,10 +144,10 @@
         symbol_layer {
             display-name = "SYMBOL";
             bindings = <
-&kp DELETE  &kp EXCL  &kp AT  &kp HASH       &kp DLLR          &kp PRCNT                                    &mmv MOVE_UP                     &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp BACKSPACE
-&trans      &trans    &trans  &kp BACKSLASH  &kp LEFT_BRACKET  &kp RIGHT_BRACKET            &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp MINUS  &kp EQUAL  &kp GRAVE  &trans    &trans    &trans
-&trans      &trans    &trans  &kp PIPE       &kp LEFT_BRACE    &kp RIGHT_BRACE    &trans                    &mmv MOVE_DOWN                   &kp UNDER  &kp PLUS   &kp TILDE  &trans    &trans    &trans
-                              &trans         &none             &trans                                                                        &trans     &mo 5      &trans
+&trans  &kp EXCL  &kp AT  &kp HASH       &kp DLLR          &kp PRCNT                                    &mmv MOVE_UP                     &kp CARET  &kp AMPS   &kp ASTRK   &kp LPAR           &kp RPAR  &trans
+&trans  &trans    &trans  &kp BACKSLASH  &kp LEFT_BRACKET  &kp RIGHT_BRACKET            &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp MINUS  &kp EQUAL  &kp GRAVE   &kp APOS           &trans    &trans
+&trans  &trans    &trans  &kp PIPE       &kp LEFT_BRACE    &kp RIGHT_BRACE    &trans                    &mmv MOVE_DOWN                   &kp UNDER  &kp PLUS   &kp TILDE   &kp DOUBLE_QUOTES  &trans    &trans
+                          &trans         &none             &trans                                                                        &trans     &mo 5      &kp DELETE
             >;
 
             sensor-bindings = <&scroll_encoder>;
@@ -156,7 +156,7 @@
         nav_layer {
             display-name = "NAV";
             bindings = <
-&trans  &kp N1                &kp N2                &kp N3          &kp N4        &kp N5                                      &mmv MOVE_UP                     &kp N6    &kp N7    &kp N8     &kp N9         &kp N0  &kp DEL
+&trans  &kp N1                &kp N2                &kp N3          &kp N4        &kp N5                                      &mmv MOVE_UP                     &kp N6    &kp N7    &kp N8     &kp N9         &kp N0  &trans
 &trans  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &kp C_PREVIOUS  &kp C_PP      &kp C_NEXT                  &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp LEFT  &kp DOWN  &kp UP     &kp RIGHT      &trans  &trans
 &trans  &trans                &trans                &kp C_MUTE      &kp C_VOL_DN  &kp C_VOL_UP  &kp C_MUTE                    &mmv MOVE_DOWN                   &kp HOME  &kp END   &kp PG_UP  &kp PAGE_DOWN  &trans  &trans
                                                     &trans          &mo 4         &trans                                                                       &trans    &none     &trans
@@ -178,9 +178,9 @@
         fn_layer {
             display-name = "Fn";
             bindings = <
-&trans  &kp F1           &kp F2           &kp F3           &kp F4           &kp F5                                         &mmv MOVE_UP                     &kp F6          &kp F7          &kp F8        &kp F9           &kp F10  &kp F11
-&trans  &rgb_ug RGB_HUI  &rgb_ug RGB_EFF  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI  &rgb_ug RGB_ON                 &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &trans   &kp F12
-&trans  &rgb_ug RGB_HUD  &rgb_ug RGB_EFR  &rgb_ug RGB_SAD  &rgb_ug RGB_BRD  &rgb_ug RGB_OFF  &kp C_MUTE                    &mmv MOVE_DOWN                   &trans          &trans          &trans        &trans           &trans   &kp CAPS
+&trans  &kp F1           &kp F2           &kp F3           &kp F4           &kp F5                                         &mmv MOVE_UP                     &kp F6          &kp F7          &kp F8        &kp F9           &kp F10  &trans
+&trans  &rgb_ug RGB_HUI  &rgb_ug RGB_EFF  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI  &rgb_ug RGB_ON                 &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &trans   &trans
+&trans  &rgb_ug RGB_HUD  &rgb_ug RGB_EFR  &rgb_ug RGB_SAD  &rgb_ug RGB_BRD  &rgb_ug RGB_OFF  &kp C_MUTE                    &mmv MOVE_DOWN                   &trans          &trans          &trans        &trans           &trans   &trans
                                           &trans           &trans           &trans                                                                          &trans          &trans          &trans
             >;
 
