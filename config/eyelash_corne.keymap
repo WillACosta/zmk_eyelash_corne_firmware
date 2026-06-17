@@ -43,11 +43,12 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <250>;
-            quick-tap-ms = <180>;
-            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            flavor = "balanced";
             hold-trigger-key-positions = <0 44 0 1 2 3 4 5 13 14 15 16 17 18 28 29 30 31 32 33 42 43 45 46 47>;
             hold-trigger-on-release;
+            require-prior-idle-ms = <125>;
         };
 
         HML: HML {
@@ -56,11 +57,12 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <250>;
-            quick-tap-ms = <180>;
-            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            flavor = "balanced";
             hold-trigger-key-positions = <7 8 9 10 11 12 22 23 24 25 26 27 36 37 38 39 40 41 45 46 47 42 43 44>;
             hold-trigger-on-release;
+            require-prior-idle-ms = <125>;
         };
 
         LLT: LLT {
@@ -69,11 +71,12 @@
             bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <250>;
-            quick-tap-ms = <100>;
-            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            flavor = "balanced";
             hold-trigger-key-positions = <7 8 9 10 11 12 22 23 24 25 26 27 36 37 38 39 40 41 45 46 47 42 43 44>;
             hold-trigger-on-release;
+            require-prior-idle-ms = <125>;
         };
 
         LTR: LTR {
@@ -82,10 +85,12 @@
             bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <250>;
-            quick-tap-ms = <100>;
-            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            flavor = "balanced";
             hold-trigger-key-positions = <0 1 2 3 4 5 13 14 15 16 17 18 28 29 30 31 32 33 34 42 43 44 45 46 47>;
+            require-prior-idle-ms = <125>;
+            hold-trigger-on-release;
         };
     };
 
@@ -162,10 +167,10 @@
         nav_layer {
             display-name = "NAV";
             bindings = <
-&trans  &kp N1                &kp N2                &kp N3          &kp N4        &kp N5                                      &mmv MOVE_UP                     &kp N6    &kp N7    &kp N8     &kp N9         &kp N0  &trans
-&trans  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &kp C_PREVIOUS  &kp C_PP      &kp C_NEXT                  &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp LEFT  &kp DOWN  &kp UP     &kp RIGHT      &trans  &trans
-&trans  &trans                &trans                &kp C_MUTE      &kp C_VOL_DN  &kp C_VOL_UP  &kp C_MUTE                    &mmv MOVE_DOWN                   &kp HOME  &kp END   &kp PG_UP  &kp PAGE_DOWN  &trans  &trans
-                                                    &trans          &mo 4         &trans                                                                       &trans    &none     &trans
+&trans  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5                                &mmv MOVE_UP                     &kp N6    &kp N7    &kp N8     &kp N9         &kp N0  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp LEFT  &kp DOWN  &kp UP     &kp RIGHT      &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &kp C_MUTE                    &mmv MOVE_DOWN                   &kp HOME  &kp END   &kp PG_UP  &kp PAGE_DOWN  &trans  &trans
+                        &trans  &mo 4   &trans                                                                 &trans    &none     &trans
             >;
 
             sensor-bindings = <&scroll_encoder>;
