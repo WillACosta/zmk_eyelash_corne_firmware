@@ -13,11 +13,11 @@ layers:
   - I
   - O
   - P
-  - {t: '$$mdi:transfer$$', type: trans}
+  - $$mdi:backspace-reverse-outline$$
   - $$mdi:apple-keyboard-shift$$
   - {t: A, h: '$$mdi:apple-keyboard-command$$'}
   - {t: S, h: '$$mdi:apple-keyboard-option$$'}
-  - D
+  - {t: D, h: '$$mdi:apple-keyboard-control$$'}
   - F
   - {t: G, h: mouse}
   - $$mdi:arrow-left-bold$$
@@ -25,7 +25,7 @@ layers:
   - $$mdi:arrow-right-bold$$
   - H
   - J
-  - K
+  - {t: K, h: '$$mdi:apple-keyboard-control$$'}
   - {t: L, h: '$$mdi:apple-keyboard-option$$'}
   - {t: ;, h: RIGHT GUI, s: ':'}
   - .
@@ -42,7 +42,7 @@ layers:
   - {t: ',', s: <}
   - {t: ., s: '>'}
   - {t: /, s: '?'}
-  - {t: '$$mdi:keyboard-esc$$', h: '$$mdi:apple-keyboard-control$$'}
+  - $$mdi:keyboard-esc$$
   - {t: '$$mdi:apple-keyboard-command$$', h: media}
   - SYMBOL
   - $$mdi:keyboard-space$$
