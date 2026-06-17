@@ -43,14 +43,14 @@ layers:
   - {t: ., s: '>'}
   - {t: /, s: '?'}
   - {t: '$$mdi:keyboard-esc$$', h: '$$mdi:apple-keyboard-control$$'}
-  - media
+  - {t: '$$mdi:apple-keyboard-command$$', h: media}
   - SYMBOL
   - $$mdi:keyboard-space$$
   - RETURN
   - Number
-  - {t: '$$mdi:backspace$$', type: backspace}
+  - {t: '$$mdi:backspace$$', h: '$$mdi:apple-keyboard-option$$'}
   SYMBOL:
-  - {t: '$$mdi:transfer$$', type: trans}
+  - $$mdi:backspace-reverse-outline$$
   - '!'
   - '@'
   - '#'
