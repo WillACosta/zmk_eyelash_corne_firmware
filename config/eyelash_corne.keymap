@@ -163,10 +163,10 @@
         nav_layer {
             display-name = "NAV";
             bindings = <
-&trans  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5                                &mmv MOVE_UP                     &kp N6    &kp N7    &kp N8     &kp N9         &kp N0  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp LEFT  &kp DOWN  &kp UP     &kp RIGHT      &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &kp C_MUTE                    &mmv MOVE_DOWN                   &kp HOME  &kp END   &kp PG_UP  &kp PAGE_DOWN  &trans  &trans
-                        &trans  &mo 4   &trans                                                                 &trans    &none     &trans
+&trans  &kp N1                &kp N2                &kp N3          &kp N4             &kp N5                                         &mmv MOVE_UP                     &kp N6    &kp N7    &kp N8     &kp N9         &kp N0  &trans
+&trans  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &kp C_PREVIOUS  &kp C_PLAY_PAUSE   &kp C_NEXT                     &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp LEFT  &kp DOWN  &kp UP     &kp RIGHT      &trans  &trans
+&trans  &trans                &trans                &kp K_MUTE      &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_MUTE                    &mmv MOVE_DOWN                   &kp HOME  &kp END   &kp PG_UP  &kp PAGE_DOWN  &trans  &trans
+                                                    &trans          &mo 4              &trans                                                                          &trans    &none     &trans
             >;
 
             label = "Number";
