@@ -143,7 +143,7 @@
         base_layer {
             display-name = "QWERTY";
             bindings = <
-&kp TAB                  &kp Q            &kp W            &kp E                &kp R  &kp T                             &kp UP                &kp Y       &kp U  &kp I                   &kp O            &kp P                &kp DELETE
+&trans                   &kp Q            &kp W            &kp E                &kp R  &kp T                             &kp UP                &kp Y       &kp U  &kp I                   &kp O            &kp P                &trans
 &kp LEFT_SHIFT           &HML LEFT_GUI A  &HML LEFT_ALT S  &HML LEFT_CONTROL D  &kp F  &LLT 3 G                &kp LEFT  &kp ENTER  &kp RIGHT  &kp H       &kp J  &HML LEFT_CONTROL K     &HMR LEFT_ALT L  &HMR RIGHT_GUI SEMI  &kp APOS
 &mt LEFT_CONTROL ESCAPE  &kp Z            &kp X            &kp C                &kp V  &kp B      &kp SPACE              &kp DOWN              &kp N       &kp M  &kp COMMA               &kp DOT          &kp FSLH             &kp ESCAPE
                                                            &kp LEFT_GUI         &mo 1  &kp SPACE                                               &kp RETURN  &mo 2  &mt LEFT_ALT BACKSPACE
@@ -153,20 +153,20 @@
         symbol_layer {
             display-name = "SYMBOL";
             bindings = <
-&kp DEL  &kp EXCL  &kp AT        &kp HASH       &kp DLLR          &kp PRCNT                                    &mmv MOVE_UP                     &kp CARET  &kp AMPS   &kp ASTRK   &kp LPAR           &kp RPAR  &trans
-&trans   &trans    &kp LEFT_ALT  &kp BACKSLASH  &kp LEFT_BRACKET  &kp RIGHT_BRACKET            &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp MINUS  &kp EQUAL  &kp GRAVE   &kp APOS           &trans    &trans
-&trans   &trans    &trans        &kp PIPE       &kp LEFT_BRACE    &kp RIGHT_BRACE    &trans                    &mmv MOVE_DOWN                   &kp UNDER  &kp PLUS   &kp TILDE   &kp DOUBLE_QUOTES  &trans    &trans
-                                 &trans         &none             &trans                                                                        &trans     &mo 5      &kp DELETE
+&trans          &kp EXCL          &kp AT           &kp HASH       &kp DLLR          &kp PRCNT                                    &mmv MOVE_UP                     &kp CARET  &kp AMPS   &kp ASTRK   &kp LPAR           &kp RPAR  &trans
+&kp K_MUTE      &kp C_PLAY_PAUSE  &kp C_VOLUME_UP  &kp BACKSLASH  &kp LEFT_BRACKET  &kp RIGHT_BRACKET            &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp MINUS  &kp EQUAL  &kp GRAVE   &kp APOS           &trans    &trans
+&kp C_PREVIOUS  &kp C_NEXT        &kp C_VOL_DN     &kp PIPE       &kp LEFT_BRACE    &kp RIGHT_BRACE    &trans                    &mmv MOVE_DOWN                   &kp UNDER  &kp PLUS   &kp TILDE   &kp DOUBLE_QUOTES  &trans    &trans
+                                                   &trans         &none             &trans                                                                        &trans     &mo 5      &kp DELETE
             >;
         };
 
         nav_layer {
             display-name = "NAV";
             bindings = <
-&trans  &kp N1                &kp N2                &kp N3          &kp N4             &kp N5                                         &mmv MOVE_UP                     &kp N6    &kp N7    &kp N8     &kp N9         &kp N0  &trans
-&trans  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &kp C_PREVIOUS  &kp C_PLAY_PAUSE   &kp C_NEXT                     &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp LEFT  &kp DOWN  &kp UP     &kp RIGHT      &trans  &trans
-&trans  &trans                &trans                &kp K_MUTE      &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_MUTE                    &mmv MOVE_DOWN                   &kp HOME  &kp END   &kp PG_UP  &kp PAGE_DOWN  &trans  &trans
-                                                    &trans          &mo 4              &trans                                                                          &trans    &none     &trans
+&trans  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5                                &mmv MOVE_UP                     &kp N6    &kp N7    &kp N8     &kp N9         &kp N0  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp LEFT  &kp DOWN  &kp UP     &kp RIGHT      &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &kp C_MUTE                    &mmv MOVE_DOWN                   &kp HOME  &kp END   &kp PG_UP  &kp PAGE_DOWN  &trans  &trans
+                        &trans  &mo 4   &trans                                                                 &trans    &none     &trans
             >;
 
             label = "Number";
