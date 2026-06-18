@@ -154,7 +154,7 @@
             display-name = "SYMBOL";
             bindings = <
 &trans          &kp EXCL          &kp AT           &kp HASH       &kp DLLR          &kp PRCNT                                    &mmv MOVE_UP                     &kp CARET  &kp AMPS   &kp ASTRK   &kp LPAR           &kp RPAR  &trans
-&kp K_MUTE      &kp C_PLAY_PAUSE  &kp C_VOLUME_UP  &kp BACKSLASH  &kp LEFT_BRACKET  &kp RIGHT_BRACKET            &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp MINUS  &kp EQUAL  &kp GRAVE   &kp APOS           &trans    &trans
+&kp C_MUTE      &kp C_PLAY_PAUSE  &kp C_VOLUME_UP  &kp BACKSLASH  &kp LEFT_BRACKET  &kp RIGHT_BRACKET            &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp MINUS  &kp EQUAL  &kp GRAVE   &kp APOS           &trans    &trans
 &kp C_PREVIOUS  &kp C_NEXT        &kp C_VOL_DN     &kp PIPE       &kp LEFT_BRACE    &kp RIGHT_BRACE    &trans                    &mmv MOVE_DOWN                   &kp UNDER  &kp PLUS   &kp TILDE   &kp DOUBLE_QUOTES  &trans    &trans
                                                    &trans         &none             &trans                                                                        &trans     &mo 5      &kp DELETE
             >;
