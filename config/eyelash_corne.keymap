@@ -43,8 +43,8 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <180>;
-            quick-tap-ms = <125>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
             flavor = "balanced";
             hold-trigger-key-positions = <0 44 0 1 2 3 4 5 13 14 15 16 17 18 28 29 30 31 32 33 42 43 45 46 47>;
             hold-trigger-on-release;
@@ -57,8 +57,8 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <180>;
-            quick-tap-ms = <125>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
             flavor = "balanced";
             hold-trigger-key-positions = <7 8 9 10 11 12 22 23 24 25 26 27 36 37 38 39 40 41 45 46 47 42 43 44>;
             hold-trigger-on-release;
@@ -71,8 +71,8 @@
             bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <180>;
-            quick-tap-ms = <125>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
             flavor = "balanced";
             hold-trigger-key-positions = <7 8 9 10 11 12 22 23 24 25 26 27 36 37 38 39 40 41 45 46 47 42 43 44>;
             hold-trigger-on-release;
@@ -85,21 +85,12 @@
             bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <180>;
-            quick-tap-ms = <125>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
             flavor = "balanced";
             hold-trigger-key-positions = <0 1 2 3 4 5 13 14 15 16 17 18 28 29 30 31 32 33 34 42 43 44 45 46 47>;
             require-prior-idle-ms = <125>;
             hold-trigger-on-release;
-        };
-
-        media_td: media_td {
-            compatible = "zmk,behavior-tap-dance";
-            label = "MEDIA_TD";
-            #binding-cells = <0>;
-            bindings = <&mo 1>, <&mo 6>;
-
-            tapping-term-ms = <180>;
         };
     };
 
@@ -152,20 +143,20 @@
         base_layer {
             display-name = "QWERTY";
             bindings = <
-&kp TAB                  &kp Q            &kp W            &kp E                &kp R      &kp T                             &kp UP                &kp Y       &kp U  &kp I                   &kp O            &kp P                &kp DELETE
-&kp LEFT_SHIFT           &HML LEFT_GUI A  &HML LEFT_ALT S  &HML LEFT_CONTROL D  &kp F      &LLT 3 G                &kp LEFT  &kp ENTER  &kp RIGHT  &kp H       &kp J  &HML LEFT_CONTROL K     &HMR LEFT_ALT L  &HMR RIGHT_GUI SEMI  &kp APOS
-&mt LEFT_CONTROL ESCAPE  &kp Z            &kp X            &kp C                &kp V      &kp B      &kp SPACE              &kp DOWN              &kp N       &kp M  &kp COMMA               &kp DOT          &kp FSLH             &kp ESCAPE
-                                                           &kp LEFT_GUI         &media_td  &kp SPACE                                               &kp RETURN  &mo 2  &mt LEFT_ALT BACKSPACE
+&kp TAB                  &kp Q            &kp W            &kp E                &kp R  &kp T                             &kp UP                &kp Y       &kp U  &kp I                   &kp O            &kp P                &kp DELETE
+&kp LEFT_SHIFT           &HML LEFT_GUI A  &HML LEFT_ALT S  &HML LEFT_CONTROL D  &kp F  &LLT 3 G                &kp LEFT  &kp ENTER  &kp RIGHT  &kp H       &kp J  &HML LEFT_CONTROL K     &HMR LEFT_ALT L  &HMR RIGHT_GUI SEMI  &kp APOS
+&mt LEFT_CONTROL ESCAPE  &kp Z            &kp X            &kp C                &kp V  &kp B      &kp SPACE              &kp DOWN              &kp N       &kp M  &kp COMMA               &kp DOT          &kp FSLH             &kp ESCAPE
+                                                           &kp LEFT_GUI         &mo 1  &kp SPACE                                               &kp RETURN  &mo 2  &mt LEFT_ALT BACKSPACE
             >;
         };
 
         symbol_layer {
             display-name = "SYMBOL";
             bindings = <
-&kp DEL  &kp EXCL  &kp AT  &kp HASH       &kp DLLR          &kp PRCNT                                    &mmv MOVE_UP                     &kp CARET  &kp AMPS   &kp ASTRK   &kp LPAR           &kp RPAR  &trans
-&trans   &trans    &trans  &kp BACKSLASH  &kp LEFT_BRACKET  &kp RIGHT_BRACKET            &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp MINUS  &kp EQUAL  &kp GRAVE   &kp APOS           &trans    &trans
-&trans   &trans    &trans  &kp PIPE       &kp LEFT_BRACE    &kp RIGHT_BRACE    &trans                    &mmv MOVE_DOWN                   &kp UNDER  &kp PLUS   &kp TILDE   &kp DOUBLE_QUOTES  &trans    &trans
-                           &trans         &none             &trans                                                                        &trans     &mo 5      &kp DELETE
+&kp DEL  &kp EXCL  &kp AT        &kp HASH       &kp DLLR          &kp PRCNT                                    &mmv MOVE_UP                     &kp CARET  &kp AMPS   &kp ASTRK   &kp LPAR           &kp RPAR  &trans
+&trans   &trans    &kp LEFT_ALT  &kp BACKSLASH  &kp LEFT_BRACKET  &kp RIGHT_BRACKET            &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp MINUS  &kp EQUAL  &kp GRAVE   &kp APOS           &trans    &trans
+&trans   &trans    &trans        &kp PIPE       &kp LEFT_BRACE    &kp RIGHT_BRACE    &trans                    &mmv MOVE_DOWN                   &kp UNDER  &kp PLUS   &kp TILDE   &kp DOUBLE_QUOTES  &trans    &trans
+                                 &trans         &none             &trans                                                                        &trans     &mo 5      &kp DELETE
             >;
         };
 
