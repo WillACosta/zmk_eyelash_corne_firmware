@@ -63,7 +63,7 @@ layers:
   - (
   - )
   - {t: '$$mdi:transfer$$', type: trans}
-  - MUTE
+  - $$mdi:volume-off$$
   - PLAY PAUSE
   - $$mdi:volume-high$$
   - {t: \, s: '|'}
