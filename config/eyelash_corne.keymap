@@ -45,13 +45,12 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <250>;
+            tapping-term-ms = <230>;
             flavor = "balanced";
             hold-trigger-key-positions = <0 44 0 1 2 3 4 5 13 14 15 16 17 18 28 29 30 31 32 33 42 43 45 46 47>;
             hold-trigger-on-release;
             require-prior-idle-ms = <100>;
-            hold-while-undecided;
-            quick-tap-ms = <175>;
+            quick-tap-ms = <150>;
         };
 
         hrm_right: hrm_right {
@@ -60,13 +59,12 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <250>;
+            tapping-term-ms = <230>;
             flavor = "balanced";
             hold-trigger-key-positions = <7 8 9 10 11 12 22 23 24 25 26 27 36 37 38 39 40 41 45 46 47 42 43 44>;
             hold-trigger-on-release;
-            require-prior-idle-ms = <125>;
-            hold-while-undecided;
-            quick-tap-ms = <175>;
+            require-prior-idle-ms = <100>;
+            quick-tap-ms = <125>;
         };
 
         lt_right: lt_right {
@@ -75,12 +73,12 @@
             bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <250>;
+            tapping-term-ms = <230>;
             flavor = "balanced";
             hold-trigger-key-positions = <7 8 9 10 11 12 22 23 24 25 26 27 36 37 38 39 40 41 45 46 47 42 43 44>;
             hold-trigger-on-release;
             require-prior-idle-ms = <100>;
-            quick-tap-ms = <175>;
+            quick-tap-ms = <150>;
         };
 
         lt_left: lt_left {
@@ -89,12 +87,12 @@
             bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <250>;
+            tapping-term-ms = <230>;
             flavor = "balanced";
             hold-trigger-key-positions = <0 1 2 3 4 5 13 14 15 16 17 18 28 29 30 31 32 33 34 42 43 44 45 46 47>;
             require-prior-idle-ms = <100>;
             hold-trigger-on-release;
-            quick-tap-ms = <175>;
+            quick-tap-ms = <150>;
         };
 
         hrm_sft_left: hrm_sft_left {
