@@ -1,6 +1,6 @@
 layout: {zmk_keyboard: eyelash_corne}
 layers:
-  QWERTY:
+  base:
   - {t: '$$mdi:transfer$$', type: trans}
   - Q
   - W
@@ -47,9 +47,9 @@ layers:
   - '&td_device'
   - $$mdi:keyboard-space$$
   - RETURN
-  - Number
+  - num
   - {t: '$$mdi:backspace$$', h: '$$mdi:apple-keyboard-option$$'}
-  SYMBOL:
+  sym:
   - {t: '$$mdi:transfer$$', type: trans}
   - '!'
   - '@'
@@ -65,7 +65,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - Ctl+A
-  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: /, s: '?'}
   - {t: \, s: '|'}
   - {t: '[', s: '{'}
   - {t: ']', s: '}'}
@@ -75,12 +75,12 @@ layers:
   - {t: '-', s: _}
   - {t: '=', s: +}
   - {t: '`', s: '~'}
-  - {t: /, s: '?'}
+  - {t: '''', s: '"'}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - '?'
   - '|'
   - '{'
   - '}'
@@ -89,16 +89,16 @@ layers:
   - _
   - +
   - '~'
-  - '?'
+  - '"'
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - Mouse
+  - mou
   - $$mdi:backspace-reverse-outline$$
-  Number:
+  num:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '1', s: '!'}
   - {t: '2', s: '@'}
@@ -142,12 +142,12 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - FN
+  - fn
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:minus-circle-outline$$', type: held}
   - {t: '$$mdi:transfer$$', type: trans}
-  device:
+  dev:
   - {t: '$$mdi:transfer$$', type: trans}
   - {h: '1', s: '$$mdi:bluetooth-connect$$'}
   - {h: '2', s: '$$mdi:bluetooth-connect$$'}
@@ -196,7 +196,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  Mouse:
+  mou:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -245,7 +245,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
-  FN:
+  fn:
   - {t: '$$mdi:transfer$$', type: trans}
   - F1
   - F2
