@@ -160,6 +160,16 @@
             bindings = <&kp PAGE_UP>;
             key-positions = <7 8>;
         };
+
+        ctrl_w_combo {
+            bindings = <&kp LC(W)>;
+            key-positions = <28 29>;
+        };
+
+        ctrl_a_combo {
+            bindings = <&kp LC(A)>;
+            key-positions = <13 14>;
+        };
     };
 
     keymap {
@@ -178,10 +188,10 @@
         symbol_layer {
             display-name = "sym";
             bindings = <
-&trans  &kp EXCL   &kp AT        &kp HASH       &kp DLLR          &kp PRCNT                                    &mmv MOVE_UP                     &kp CARET  &kp AMPS   &kp ASTRK   &kp LPAR           &kp RPAR  &trans
-&trans  &kp LC(A)  &kp SLASH     &kp BACKSLASH  &kp LEFT_BRACKET  &kp RIGHT_BRACKET            &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp MINUS  &kp EQUAL  &kp GRAVE   &kp SINGLE_QUOTE   &trans    &trans
-&trans  &trans     &kp QUESTION  &kp PIPE       &kp LEFT_BRACE    &kp RIGHT_BRACE    &trans                    &mmv MOVE_DOWN                   &kp UNDER  &kp PLUS   &kp TILDE   &kp DOUBLE_QUOTES  &trans    &trans
-                                 &trans         &none             &trans                                                                        &trans     &mo 4      &kp DELETE
+&trans  &kp EXCL  &kp AT        &kp HASH       &kp DLLR          &kp PRCNT                                    &mmv MOVE_UP                     &kp CARET  &kp AMPS   &kp ASTRK   &kp LPAR           &kp RPAR  &trans
+&trans  &trans    &kp SLASH     &kp BACKSLASH  &kp LEFT_BRACKET  &kp RIGHT_BRACKET            &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp MINUS  &kp EQUAL  &kp GRAVE   &kp SINGLE_QUOTE   &trans    &trans
+&trans  &trans    &kp QUESTION  &kp PIPE       &kp LEFT_BRACE    &kp RIGHT_BRACE    &trans                    &mmv MOVE_DOWN                   &kp UNDER  &kp PLUS   &kp TILDE   &kp DOUBLE_QUOTES  &trans    &trans
+                                &trans         &none             &trans                                                                        &trans     &mo 4      &kp DELETE
             >;
         };
 
