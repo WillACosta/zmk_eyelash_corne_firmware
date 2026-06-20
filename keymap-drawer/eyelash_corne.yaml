@@ -64,7 +64,7 @@ layers:
   - )
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - Ctl+A
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: /, s: '?'}
   - {t: \, s: '|'}
   - {t: '[', s: '{'}
@@ -311,3 +311,7 @@ combos:
   k: PgDn
 - p: [7, 8]
   k: PgUp
+- p: [28, 29]
+  k: Ctl+W
+- p: [13, 14]
+  k: Ctl+A
