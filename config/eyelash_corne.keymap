@@ -121,11 +121,6 @@
     combos {
         compatible = "zmk,combos";
 
-        softoff_combo {
-            bindings = <&soft_off>;
-            key-positions = <1 15 29>;
-        };
-
         tab_combo {
             bindings = <&kp TAB>;
             key-positions = <1 2>;
