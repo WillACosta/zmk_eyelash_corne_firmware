@@ -163,12 +163,12 @@
 
         ctrl_w_combo {
             bindings = <&kp LC(W)>;
-            key-positions = <28 29>;
+            key-positions = <29 30>;
         };
 
         ctrl_a_combo {
             bindings = <&kp LC(A)>;
-            key-positions = <13 14>;
+            key-positions = <14 15>;
         };
     };
 
