@@ -488,7 +488,7 @@ parse_config:
     C_AL_LOCK: $$mdi:lock$$
     K_CANCEL: $$mdi:close-box$$
     K_FIND: $$mdi:apple-finder$$
-    # Command + 
+    # Command +
     LG(A):
       tap: 'A'
       hold: $$mdi:apple-keyboard-command$$
