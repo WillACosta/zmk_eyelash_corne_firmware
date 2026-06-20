@@ -295,8 +295,6 @@ layers:
   - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
 combos:
-- p: [1, 15, 29]
-  k: '&soft_off'
 - p: [1, 2]
   k: $$mdi:keyboard-tab$$
 - p: [22, 23]
