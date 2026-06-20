@@ -311,7 +311,7 @@ combos:
   k: PgDn
 - p: [7, 8]
   k: PgUp
-- p: [28, 29]
+- p: [29, 30]
   k: Ctl+W
-- p: [13, 14]
+- p: [14, 15]
   k: Ctl+A
