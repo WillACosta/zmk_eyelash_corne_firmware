@@ -63,7 +63,7 @@ layers:
   - (
   - )
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - $$mdi:progress-download$$
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: /, s: '?'}
   - {t: \, s: '|'}
@@ -126,7 +126,7 @@ layers:
   - $$mdi:arrow-up-bold$$
   - $$mdi:arrow-right-bold$$
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - $$mdi:progress-download$$
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -258,7 +258,7 @@ combos:
   k: PgDn
 - p: [7, 8]
   k: PgUp
-- p: [2, 3]
+- p: [29, 30]
   k: Ctl+W
-- p: [16, 15]
+- p: [15, 14]
   k: Ctl+A
