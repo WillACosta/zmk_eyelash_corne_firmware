@@ -125,20 +125,6 @@
             bindings = <&kp LC(A)>;
             key-positions = <15 14>;
         };
-
-        bootloader_lft_combo {
-            bindings = <&bootloader>;
-            key-positions = <2 16 30>;
-            layers = <0>;
-            timeout-ms = <200>;
-        };
-
-        bootloader_rht_combo {
-            bindings = <&bootloader>;
-            key-positions = <10 24 39>;
-            layers = <0>;
-            timeout-ms = <200>;
-        };
     };
 
     keymap {
@@ -157,10 +143,10 @@
         symbol_layer {
             display-name = "sym";
             bindings = <
-&trans  &kp EXCL  &kp AT        &kp HASH       &kp DLLR          &kp PRCNT                                    &mmv MOVE_UP                     &kp CARET  &kp AMPS   &kp ASTRK   &kp LPAR           &kp RPAR  &trans
-&trans  &trans    &kp SLASH     &kp BACKSLASH  &kp LEFT_BRACKET  &kp RIGHT_BRACKET            &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp MINUS  &kp EQUAL  &kp GRAVE   &kp SINGLE_QUOTE   &trans    &trans
-&trans  &trans    &kp QUESTION  &kp PIPE       &kp LEFT_BRACE    &kp RIGHT_BRACE    &trans                    &mmv MOVE_DOWN                   &kp UNDER  &kp PLUS   &kp TILDE   &kp DOUBLE_QUOTES  &trans    &trans
-                                &trans         &none             &trans                                                                        &trans     &trans     &kp DELETE
+&trans       &kp EXCL  &kp AT        &kp HASH       &kp DLLR          &kp PRCNT                                    &mmv MOVE_UP                     &kp CARET  &kp AMPS   &kp ASTRK   &kp LPAR           &kp RPAR  &trans
+&bootloader  &trans    &kp SLASH     &kp BACKSLASH  &kp LEFT_BRACKET  &kp RIGHT_BRACKET            &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp MINUS  &kp EQUAL  &kp GRAVE   &kp SINGLE_QUOTE   &trans    &trans
+&trans       &trans    &kp QUESTION  &kp PIPE       &kp LEFT_BRACE    &kp RIGHT_BRACE    &trans                    &mmv MOVE_DOWN                   &kp UNDER  &kp PLUS   &kp TILDE   &kp DOUBLE_QUOTES  &trans    &trans
+                                     &trans         &none             &trans                                                                        &trans     &trans     &kp DELETE
             >;
         };
 
@@ -168,7 +154,7 @@
             display-name = "num";
             bindings = <
 &trans  &kp N1  &kp N2  &kp N3  &kp N4   &kp N5                                 &mmv MOVE_UP                     &kp N6          &kp N7          &kp N8        &kp N9     &kp N0  &trans
-&trans  &kp F2  &kp F5  &trans  &kp F11  &kp F12                &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT  &trans  &trans
+&trans  &kp F2  &kp F5  &trans  &kp F11  &kp F12                &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT  &trans  &bootloader
 &trans  &trans  &trans  &trans  &trans   &trans   &kp C_MUTE                    &mmv MOVE_DOWN                   &trans          &trans          &trans        &trans     &trans  &trans
                         &trans  &trans   &trans                                                                  &trans          &none           &trans
             >;
