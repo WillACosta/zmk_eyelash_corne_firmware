@@ -258,7 +258,10 @@ combos:
   k: PgDn
 - p: [7, 8]
   k: PgUp
-- p: [29, 30]
+- p: [2, 3]
   k: Ctl+W
-- p: [15, 14]
+- p: [15, 16]
   k: Ctl+A
+- p: [17, 18]
+  k: {t: '$$mdi:keyboard-return$$', type: enter}
+  l: [base]
