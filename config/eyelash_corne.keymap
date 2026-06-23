@@ -118,12 +118,12 @@
 
         ctrl_w_combo {
             bindings = <&kp LC(W)>;
-            key-positions = <29 30>;
+            key-positions = <2 3>;
         };
 
         ctrl_a_combo {
             bindings = <&kp LC(A)>;
-            key-positions = <15 14>;
+            key-positions = <15 16>;
         };
     };
 
@@ -133,19 +133,19 @@
         base_layer {
             display-name = "base";
             bindings = <
-&trans                     &kp Q                 &kp W                 &kp E                     &kp R                   &kp T                             &kp UP                &kp Y       &kp U                    &kp I                       &kp O                  &kp P                      &trans
-&ht_mod LEFT_SHIFT ESCAPE  &hrm_left LEFT_GUI A  &hrm_left LEFT_ALT S  &hrm_left LEFT_CONTROL D  &hrm_left LEFT_SHIFT F  &kp G                   &kp LEFT  &kp ENTER  &kp RIGHT  &kp H       &hrm_right LEFT_SHIFT J  &hrm_right LEFT_CONTROL K   &hrm_right LEFT_ALT L  &hrm_right RIGHT_GUI SEMI  &kp APOS
-&trans                     &kp Z                 &kp X                 &kp C                     &kp V                   &kp B      &kp SPACE              &kp DOWN              &kp N       &kp M                    &kp COMMA                   &kp DOT                &kp FSLH                   &trans
-                                                                       &kp LEFT_GUI              &td_device              &kp SPACE                                               &kp RETURN  &mo 2                    &ht_mod LEFT_ALT BACKSPACE
+&trans                       &kp Q  &kp W  &kp E         &kp R       &kp T                             &kp UP                &kp Y       &kp U  &kp I                       &kp O    &kp P          &trans
+&kp LEFT_SHIFT               &kp A  &kp S  &kp D         &kp F       &kp G                   &kp LEFT  &kp ENTER  &kp RIGHT  &kp H       &kp J  &kp K                       &kp L    &kp SEMICOLON  &kp APOS
+&ht_mod LEFT_CONTROL ESCAPE  &kp Z  &kp X  &kp C         &kp V       &kp B      &kp SPACE              &kp DOWN              &kp N       &kp M  &kp COMMA                   &kp DOT  &kp FSLH       &trans
+                                           &kp LEFT_GUI  &td_device  &kp SPACE                                               &kp RETURN  &mo 2  &ht_mod LEFT_ALT BACKSPACE
             >;
         };
 
         symbol_layer {
             display-name = "sym";
             bindings = <
-&trans       &kp EXCL  &kp AT        &kp HASH       &kp DLLR          &kp PRCNT                                    &mmv MOVE_UP                     &kp CARET  &kp AMPS   &kp ASTRK   &kp LPAR           &kp RPAR  &trans
-&bootloader  &trans    &kp SLASH     &kp BACKSLASH  &kp LEFT_BRACKET  &kp RIGHT_BRACKET            &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp MINUS  &kp EQUAL  &kp GRAVE   &kp SINGLE_QUOTE   &trans    &trans
-&trans       &trans    &kp QUESTION  &kp PIPE       &kp LEFT_BRACE    &kp RIGHT_BRACE    &trans                    &mmv MOVE_DOWN                   &kp UNDER  &kp PLUS   &kp TILDE   &kp DOUBLE_QUOTES  &trans    &trans
+&trans       &kp EXCL  &kp AT        &kp HASH       &kp DLLR          &kp PRCNT                                    &mmv MOVE_UP                     &kp CARET  &kp AMPS   &kp ASTRK   &kp LPAR    &kp RPAR  &trans
+&bootloader  &trans    &kp SLASH     &kp BACKSLASH  &kp LEFT_BRACKET  &kp RIGHT_BRACKET            &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp MINUS  &kp EQUAL  &kp GRAVE   &kp PERIOD  &trans    &trans
+&trans       &trans    &kp QUESTION  &kp PIPE       &kp LEFT_BRACE    &kp RIGHT_BRACE    &trans                    &mmv MOVE_DOWN                   &kp UNDER  &kp PLUS   &kp TILDE   &kp COMMA   &trans    &trans
                                      &trans         &none             &trans                                                                        &trans     &trans     &kp DELETE
             >;
         };
