@@ -33,8 +33,6 @@
             display-name = "Shift/Caps Lock Tap Dance";
             #binding-cells = <0>;
             bindings = <&mo 1>, <&mo 3>;
-
-            tapping-term-ms = <175>;
         };
 
         hrm_left: hrm_left {
@@ -43,7 +41,7 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <230>;
+            tapping-term-ms = <245>;
             flavor = "balanced";
             hold-trigger-key-positions = <7 8 9 10 11 12 22 23 24 25 26 27 36 37 38 39 40 41 45 46 47>;
             hold-trigger-on-release;
@@ -57,7 +55,7 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <230>;
+            tapping-term-ms = <245>;
             flavor = "balanced";
             hold-trigger-key-positions = <0 1 2 3 4 5 13 14 15 16 17 18 28 29 30 31 32 33 34 42 43 44>;
             hold-trigger-on-release;
@@ -71,10 +69,9 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <215>;
             flavor = "balanced";
             require-prior-idle-ms = <100>;
-            hold-trigger-on-release;
         };
     };
 
@@ -93,30 +90,35 @@
             bindings = <&kp TAB>;
             key-positions = <1 2>;
             slow-release;
+            layers = <0>;
         };
 
         home_combo {
             bindings = <&kp HOME>;
             key-positions = <22 23>;
             slow-release;
+            layers = <0>;
         };
 
         end_combo {
             bindings = <&kp END>;
             key-positions = <24 25>;
             slow-release;
+            layers = <0>;
         };
 
         bksp_combo {
             bindings = <&kp BACKSPACE>;
             key-positions = <11 10>;
             slow-release;
+            layers = <0>;
         };
 
         pgdn_combo {
             bindings = <&kp PAGE_DOWN>;
             key-positions = <36 37>;
             slow-release;
+            layers = <0>;
         };
 
         pgup_combo {
@@ -129,12 +131,14 @@
             bindings = <&kp LC(W)>;
             key-positions = <2 3>;
             slow-release;
+            layers = <0>;
         };
 
         ctrl_a_combo {
             bindings = <&kp LC(A)>;
             key-positions = <15 16>;
             slow-release;
+            layers = <0>;
         };
 
         enter_combo {
@@ -143,6 +147,13 @@
             layers = <0>;
             require-prior-idle-ms = <175>;
             slow-release;
+        };
+
+        del_combo {
+            bindings = <&kp DELETE>;
+            key-positions = <11 10>;
+            slow-release;
+            layers = <2>;
         };
     };
 
