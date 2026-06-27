@@ -585,8 +585,8 @@ rect.held, rect.combo.held {
 <text x="812" y="87" class="combo tap">END</text>
 </g>
 <g class="combo backspace combopos-3">
-<rect rx="6" ry="6" x="854" y="29" width="28" height="26" class="combo backspace"/>
-<use href="#mdi:backspace" xlink:href="#mdi:backspace" x="859" y="33" height="18" width="18.0" class="combo backspace tap glyph mdi:backspace"/>
+<rect rx="6" ry="6" x="742" y="74" width="28" height="26" class="combo backspace"/>
+<use href="#mdi:backspace" xlink:href="#mdi:backspace" x="747" y="78" height="18" width="18.0" class="combo backspace tap glyph mdi:backspace"/>
 </g>
 <g class="combo combopos-4">
 <rect rx="6" ry="6" x="686" y="137" width="28" height="26" class="combo"/>

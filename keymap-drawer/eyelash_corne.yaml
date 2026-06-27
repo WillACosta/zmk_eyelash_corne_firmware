@@ -255,7 +255,7 @@ combos:
 - p: [24, 25]
   k: END
   l: [base]
-- p: [11, 10]
+- p: [23, 24]
   k: {t: '$$mdi:backspace$$', type: backspace}
   l: [base]
 - p: [36, 37]
