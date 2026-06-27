@@ -49,8 +49,8 @@
 /* ------------------------------------------------------------------ */
 /* Connection status LEDs                                              */
 /* ------------------------------------------------------------------ */
-#define LED_HOST_STATUS   18  /* V */
-#define LED_SPLIT_STATUS  19  /* B */
+#define LED_HOST_STATUS   15  /* V */
+#define LED_SPLIT_STATUS  14  /* B */
 
 /* ------------------------------------------------------------------ */
 /* Timing constants (milliseconds)                                     */
@@ -59,7 +59,7 @@
 #define LED_PAIRING_ON_MS        150
 #define LED_PAIRING_OFF_MS       150
 #define LED_PAIRING_CYCLES       5
-#define LED_STATUS_DISPLAY_MS    1000
+#define LED_STATUS_DISPLAY_MS    8000
 
 /* ------------------------------------------------------------------ */
 /* Brightness (0-255 per channel)                                      */
