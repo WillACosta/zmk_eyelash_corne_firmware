@@ -1,0 +1,14 @@
+# Copyright (c) 2024 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+menuconfig ZMK_LED_STATUS
+    bool "LED-based keyboard status indicators"
+    depends on ZMK_RGB_UNDERGLOW
+    depends on SHIELD_EYELASH_CORNE_LEFT
+    default y
+    help
+      Enable the LED status system for the Eyelash Corne left (central) half.
+      Uses per-key RGB LEDs to indicate Bluetooth profile, pairing state,
+      host connection, split connection, and battery level.
+      LEDs are off by default and only illuminate during brief event-driven
+      animations, keeping power consumption minimal.

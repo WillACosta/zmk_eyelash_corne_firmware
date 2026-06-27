@@ -9,6 +9,11 @@
 #include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/rgb.h>
 
+/* LED status query constants – only available on the central (left) half */
+#ifdef CONFIG_ZMK_LED_STATUS
+#include "../boards/shields/eyelash_corne/led_status/led_status_behavior.h"
+#endif
+
 &mmv_input_listener { input-processors = <&zip_xy_scaler 2 1>; };
 
 &msc_input_listener { input-processors = <&zip_scroll_scaler 2 1>; };
@@ -155,6 +160,40 @@
             slow-release;
             layers = <2>;
         };
+
+        /* LED status combos (Lower + B/N/M):
+         * Row 2 binding positions (0-indexed from the start of the full keymap):
+         *   28=trans 29=Z 30=X 31=C 32=V 33=B 34=SPACE 35=DOWN 36=N 37=M ...
+         * Thumb row:
+         *   42=GUI  43=td_device(Lower)  44=SPACE  45=RETURN  46=mo2  47=ALT/BKSP
+         *
+         * Lower = position 43  (td_device thumb key)
+         * B     = position 33  (left-hand bottom row)
+         * N     = position 36  (right-hand bottom row, 1st alpha key)
+         * M     = position 37  (right-hand bottom row, 2nd alpha key)
+         *
+         * These are central-only and require CONFIG_ZMK_LED_STATUS=y.
+         */
+#ifdef CONFIG_ZMK_LED_STATUS
+        led_battery_combo {
+            bindings = <&led_query LED_QUERY_BATTERY>;
+            key-positions = <43 33>;
+            timeout-ms = <50>;
+        };
+
+        led_host_combo {
+            bindings = <&led_query LED_QUERY_HOST>;
+            key-positions = <43 36>;
+            timeout-ms = <50>;
+        };
+
+        led_split_combo {
+            bindings = <&led_query LED_QUERY_SPLIT>;
+            key-positions = <43 37>;
+            timeout-ms = <50>;
+        };
+#endif /* CONFIG_ZMK_LED_STATUS */
+
     };
 
     keymap {

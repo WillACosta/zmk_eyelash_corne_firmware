@@ -43,3 +43,5 @@ config LED_PWM
 endif # ZMK_BACKLIGHT
 
 endif # SHIELD_EYELASH_CORNE_LEFT || SHIELD_EYELASH_CORNE_RIGHT
+
+source "boards/shields/eyelash_corne/Kconfig.led_status"

@@ -1,0 +1,12 @@
+# Copyright (c) 2024 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+description: LED status query behavior
+
+compatible: "zmk,behavior-led-status"
+
+include: one_param.yaml
+
+properties:
+  label:
+    type: string

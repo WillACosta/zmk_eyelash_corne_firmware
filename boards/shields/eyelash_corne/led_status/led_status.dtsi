@@ -1,0 +1,15 @@
+/*
+ * Copyright (c) 2024 The ZMK Contributors
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+
+/ {
+    behaviors {
+        led_query: led_query {
+            compatible = "zmk,behavior-led-status";
+            #binding-cells = <1>;
+        };
+    };
+};

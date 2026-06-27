@@ -9,6 +9,7 @@
 #include <behaviors/battery_history_request.dtsi>
 #include <input/processors.dtsi>
 #include <input/processors/runtime-input-processor.dtsi>
+#include "led_status/led_status.dtsi"
 
 &left_encoder {
     status = "okay";
