@@ -275,3 +275,9 @@ combos:
 - p: [11, 10]
   k: $$mdi:backspace-reverse-outline$$
   l: [num]
+- p: [43, 33]
+  k: '&led_query 2'
+- p: [43, 36]
+  k: '&led_query'
+- p: [43, 37]
+  k: '&led_query 1'
