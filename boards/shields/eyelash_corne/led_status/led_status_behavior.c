@@ -47,13 +47,16 @@
 LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 
 /* Forward-declaration of the query helpers from led_status.c */
+#if IS_ENABLED(CONFIG_ZMK_LED_STATUS)
 extern void led_status_query_host(void);
 extern void led_status_query_split(void);
 extern void led_status_query_battery(void);
+#endif
 
 static int led_status_keymap_binding_pressed(struct zmk_behavior_binding *binding,
                                               struct zmk_behavior_binding_event event)
 {
+#if IS_ENABLED(CONFIG_ZMK_LED_STATUS)
     switch (binding->param1) {
     case LED_QUERY_HOST:
         led_status_query_host();
@@ -68,6 +71,10 @@ static int led_status_keymap_binding_pressed(struct zmk_behavior_binding *bindin
         LOG_WRN("Unknown LED query type: %d", binding->param1);
         break;
     }
+#else
+    ARG_UNUSED(binding);
+    ARG_UNUSED(event);
+#endif
     return ZMK_BEHAVIOR_OPAQUE;
 }
 

@@ -9,10 +9,9 @@
 #include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/rgb.h>
 
-/* LED status query constants – only available on the central (left) half */
-#ifdef CONFIG_ZMK_LED_STATUS
-#include "../boards/shields/eyelash_corne/led_status/led_status_behavior.h"
-#endif
+#define LED_QUERY_HOST      0
+#define LED_QUERY_SPLIT     1
+#define LED_QUERY_BATTERY   2
 
 &mmv_input_listener { input-processors = <&zip_xy_scaler 2 1>; };
 
@@ -174,7 +173,6 @@
          *
          * These are central-only and require CONFIG_ZMK_LED_STATUS=y.
          */
-#ifdef CONFIG_ZMK_LED_STATUS
         led_battery_combo {
             bindings = <&led_query LED_QUERY_BATTERY>;
             key-positions = <43 33>;
@@ -192,7 +190,6 @@
             key-positions = <43 37>;
             timeout-ms = <50>;
         };
-#endif /* CONFIG_ZMK_LED_STATUS */
 
     };
 
