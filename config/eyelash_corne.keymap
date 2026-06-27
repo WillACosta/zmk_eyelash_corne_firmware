@@ -160,34 +160,30 @@
             layers = <2>;
         };
 
-        /* LED status combos (Lower + B/N/M):
-         * Row 2 binding positions (0-indexed from the start of the full keymap):
-         *   28=trans 29=Z 30=X 31=C 32=V 33=B 34=SPACE 35=DOWN 36=N 37=M ...
-         * Thumb row:
-         *   42=GUI  43=td_device(Lower)  44=SPACE  45=RETURN  46=mo2  47=ALT/BKSP
+        /* LED status combos on the base layer (left bottom row):
+         *   29=Z  30=X  31=C  32=V
          *
-         * Lower = position 43  (td_device thumb key)
-         * B     = position 33  (left-hand bottom row)
-         * N     = position 36  (right-hand bottom row, 1st alpha key)
-         * M     = position 37  (right-hand bottom row, 2nd alpha key)
+         *   Z + X (29 30) → Show Battery
+         *   X + C (30 31) → Show Host Status
+         *   C + V (31 32) → Show Split Status
          *
-         * These are central-only and require CONFIG_ZMK_LED_STATUS=y.
+         * These are extremely easy to trigger with a single finger/motion.
          */
         led_battery_combo {
             bindings = <&led_query LED_QUERY_BATTERY>;
-            key-positions = <43 33>;
+            key-positions = <29 30>;
             timeout-ms = <50>;
         };
 
         led_host_combo {
             bindings = <&led_query LED_QUERY_HOST>;
-            key-positions = <43 36>;
+            key-positions = <30 31>;
             timeout-ms = <50>;
         };
 
         led_split_combo {
             bindings = <&led_query LED_QUERY_SPLIT>;
-            key-positions = <43 37>;
+            key-positions = <31 32>;
             timeout-ms = <50>;
         };
 

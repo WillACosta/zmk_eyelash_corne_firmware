@@ -315,8 +315,11 @@ void led_status_show_battery(uint8_t percentage)
 static int ble_profile_listener(const zmk_event_t *eh)
 {
     uint8_t idx = zmk_ble_active_profile_index();
+    bool open = zmk_ble_active_profile_is_open();
 
-    if (zmk_ble_active_profile_is_open()) {
+    LOG_INF("BLE active profile changed: index=%d, open/pairing=%d", idx, open);
+
+    if (open) {
         /* Profile is open (unbound) → pairing mode */
         led_status_show_pairing(idx);
     } else {
@@ -338,6 +341,7 @@ static int split_status_listener(const zmk_event_t *eh)
     const struct zmk_split_peripheral_status_changed *ev =
         as_zmk_split_peripheral_status_changed(eh);
     if (ev) {
+        LOG_INF("Split status event: connected=%d", ev->connected);
         split_connected = ev->connected;
     }
     return ZMK_EV_EVENT_BUBBLE;
@@ -352,6 +356,7 @@ static int battery_listener(const zmk_event_t *eh)
     const struct zmk_battery_state_changed *ev =
         as_zmk_battery_state_changed(eh);
     if (ev) {
+        LOG_INF("Battery state event: percentage=%d", ev->state_of_charge);
         battery_pct = ev->state_of_charge;
     }
     return ZMK_EV_EVENT_BUBBLE;
@@ -373,10 +378,8 @@ ZMK_SUBSCRIPTION(led_status_battery, zmk_battery_state_changed);
  */
 void led_status_query_host(void)
 {
-    /* A connected BLE profile means we have a host link.
-     * zmk_ble_active_profile_is_connected() returns true when the active
-     * profile has a bonded host that is currently connected. */
     bool connected = zmk_ble_active_profile_is_connected();
+    LOG_INF("Query host status: connected=%d", connected);
     led_status_show_host(connected);
 }
 
@@ -385,6 +388,7 @@ void led_status_query_host(void)
  */
 void led_status_query_split(void)
 {
+    LOG_INF("Query split status: connected=%d", split_connected);
     led_status_show_split(split_connected);
 }
 
@@ -393,6 +397,7 @@ void led_status_query_split(void)
  */
 void led_status_query_battery(void)
 {
+    LOG_INF("Query battery status: percentage=%d", battery_pct);
     led_status_show_battery(battery_pct);
 }
 
