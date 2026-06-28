@@ -35,6 +35,10 @@
 #include <zmk/ble.h>
 #include <zmk/battery.h>
 
+#if IS_ENABLED(CONFIG_ZMK_RGB_UNDERGLOW)
+#include <zmk/rgb_underglow.h>
+#endif
+
 #include "led_status.h"
 #include "led_status_config.h"
 
@@ -72,6 +76,7 @@ static const struct led_rgb COLOR_GREEN  = {.r = 0,   .g = B,   .b = 0};
 static const struct led_rgb COLOR_RED    = {.r = B,   .g = 0,   .b = 0};
 /* Orange ≈ full red + half green */
 static const struct led_rgb COLOR_ORANGE = {.r = B,   .g = B/2, .b = 0};
+static const struct led_rgb COLOR_PURPLE = {.r = B,   .g = 0,   .b = B};
 
 /* Write a single pixel and flush.  Pixels outside the left-half chain are
  * silently ignored to protect against misconfiguration. */
@@ -117,6 +122,7 @@ K_WORK_DEFINE(profile_on_work, profile_on_work_handler);
 static void profile_off_work_handler(struct k_work *work)
 {
     set_pixel(profile_work_idx, COLOR_OFF);
+    refresh_underglow_suspension();
 }
 
 /* --- FR-2: Pairing blink --- */
@@ -134,6 +140,7 @@ static void pairing_step_work_handler(struct k_work *work)
 {
     if (pairing_data.remaining_cycles == 0) {
         set_pixel(pairing_data.led_idx, COLOR_OFF);
+        refresh_underglow_suspension();
         return;
     }
 
@@ -158,13 +165,14 @@ K_WORK_DELAYABLE_DEFINE(host_off_work, host_off_work_handler);
 static void host_on_work_handler(struct k_work *work)
 {
     set_pixel(LED_HOST_STATUS,
-              host_status_connected ? COLOR_GREEN : COLOR_RED);
+              host_status_connected ? COLOR_PURPLE : COLOR_RED);
 }
 K_WORK_DEFINE(host_on_work, host_on_work_handler);
 
 static void host_off_work_handler(struct k_work *work)
 {
     set_pixel(LED_HOST_STATUS, COLOR_OFF);
+    refresh_underglow_suspension();
 }
 
 /* --- FR-4: Split status --- */
@@ -176,13 +184,14 @@ K_WORK_DELAYABLE_DEFINE(split_off_work, split_off_work_handler);
 static void split_on_work_handler(struct k_work *work)
 {
     set_pixel(LED_SPLIT_STATUS,
-              split_status_connected_arg ? COLOR_GREEN : COLOR_RED);
+              split_status_connected_arg ? COLOR_BLUE : COLOR_RED);
 }
 K_WORK_DEFINE(split_on_work, split_on_work_handler);
 
 static void split_off_work_handler(struct k_work *work)
 {
     set_pixel(LED_SPLIT_STATUS, COLOR_OFF);
+    refresh_underglow_suspension();
 }
 
 /* --- FR-5: Battery --- */
@@ -231,7 +240,14 @@ static void battery_off_work_handler(struct k_work *work)
     uint8_t indices[3] = {LED_BATTERY_BOTTOM, LED_BATTERY_MIDDLE, LED_BATTERY_TOP};
     struct led_rgb colors[3] = {COLOR_OFF, COLOR_OFF, COLOR_OFF};
     set_pixels_and_flush(indices, colors, 3);
+    refresh_underglow_suspension();
 }
+
+static bool underglow_was_on = false;
+static bool suspended_by_us = false;
+
+static void refresh_underglow_suspension(void);
+
 
 /* ======================================================================
  * Public API
@@ -254,6 +270,7 @@ void led_status_show_profile(uint8_t profile)
     profile_work_idx = led_map[profile];
     k_work_submit(&profile_on_work);
     k_work_schedule(&profile_off_work, K_MSEC(LED_PROFILE_DISPLAY_MS));
+    refresh_underglow_suspension();
 }
 
 void led_status_show_pairing(uint8_t profile)
@@ -276,6 +293,7 @@ void led_status_show_pairing(uint8_t profile)
 
     /* Kick off immediately */
     k_work_schedule(&pairing_step_work, K_NO_WAIT);
+    refresh_underglow_suspension();
 }
 
 void led_status_show_host(bool connected)
@@ -284,6 +302,7 @@ void led_status_show_host(bool connected)
     host_status_connected = connected;
     k_work_submit(&host_on_work);
     k_work_schedule(&host_off_work, K_MSEC(LED_STATUS_DISPLAY_MS));
+    refresh_underglow_suspension();
 }
 
 void led_status_show_split(bool connected)
@@ -292,6 +311,7 @@ void led_status_show_split(bool connected)
     split_status_connected_arg = connected;
     k_work_submit(&split_on_work);
     k_work_schedule(&split_off_work, K_MSEC(LED_STATUS_DISPLAY_MS));
+    refresh_underglow_suspension();
 }
 
 void led_status_show_battery(uint8_t percentage)
@@ -300,6 +320,7 @@ void led_status_show_battery(uint8_t percentage)
     battery_work_pct = percentage;
     k_work_submit(&battery_on_work);
     k_work_schedule(&battery_off_work, K_MSEC(LED_STATUS_DISPLAY_MS));
+    refresh_underglow_suspension();
 }
 
 /* ======================================================================
@@ -424,3 +445,27 @@ static int led_status_init(void)
 }
 
 SYS_INIT(led_status_init, APPLICATION, CONFIG_APPLICATION_INIT_PRIORITY);
+
+static void refresh_underglow_suspension(void)
+{
+#if IS_ENABLED(CONFIG_ZMK_RGB_UNDERGLOW)
+    bool any_active = k_work_delayable_is_pending(&profile_off_work) ||
+                      k_work_delayable_is_pending(&pairing_step_work) ||
+                      k_work_delayable_is_pending(&host_off_work) ||
+                      k_work_delayable_is_pending(&split_off_work) ||
+                      k_work_delayable_is_pending(&battery_off_work);
+
+    if (any_active && !suspended_by_us) {
+        zmk_rgb_underglow_get_state(&underglow_was_on);
+        if (underglow_was_on) {
+            zmk_rgb_underglow_off();
+        }
+        suspended_by_us = true;
+    } else if (!any_active && suspended_by_us) {
+        if (underglow_was_on) {
+            zmk_rgb_underglow_on();
+        }
+        suspended_by_us = false;
+    }
+#endif
+}
