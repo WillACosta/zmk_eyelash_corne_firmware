@@ -255,7 +255,7 @@ combos:
 - p: [24, 25]
   k: END
   l: [base]
-- p: [11, 10]
+- p: [23, 24]
   k: {t: '$$mdi:backspace$$', type: backspace}
   l: [base]
 - p: [36, 37]
@@ -272,7 +272,7 @@ combos:
 - p: [17, 18]
   k: {t: '$$mdi:keyboard-return$$', type: enter}
   l: [base]
-- p: [11, 10]
+- p: [25, 26]
   k: $$mdi:backspace-reverse-outline$$
   l: [num]
 - p: [29, 30]
