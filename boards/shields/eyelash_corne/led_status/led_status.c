@@ -64,19 +64,22 @@ static struct led_rgb pixels[STRIP_NUM_PIXELS];
 static bool split_connected = false;
 static uint8_t battery_pct = 100;
 
+/* Forward declaration for underglow suspension helper */
+static void refresh_underglow_suspension(void);
+
 /* ======================================================================
  * Colour helpers
  * ====================================================================== */
 
-#define B LED_STATUS_BRIGHTNESS
+#define STATUS_BRT LED_STATUS_BRIGHTNESS
 
-static const struct led_rgb COLOR_OFF    = {.r = 0,   .g = 0,   .b = 0};
-static const struct led_rgb COLOR_BLUE   = {.r = 0,   .g = 0,   .b = B};
-static const struct led_rgb COLOR_GREEN  = {.r = 0,   .g = B,   .b = 0};
-static const struct led_rgb COLOR_RED    = {.r = B,   .g = 0,   .b = 0};
+static const struct led_rgb COLOR_OFF    = {.r = 0,          .g = 0,          .b = 0};
+static const struct led_rgb COLOR_BLUE   = {.r = 0,          .g = 0,          .b = STATUS_BRT};
+static const struct led_rgb COLOR_GREEN  = {.r = 0,          .g = STATUS_BRT, .b = 0};
+static const struct led_rgb COLOR_RED    = {.r = STATUS_BRT, .g = 0,          .b = 0};
 /* Orange ≈ full red + half green */
-static const struct led_rgb COLOR_ORANGE = {.r = B,   .g = B/2, .b = 0};
-static const struct led_rgb COLOR_PURPLE = {.r = B,   .g = 0,   .b = B};
+static const struct led_rgb COLOR_ORANGE = {.r = STATUS_BRT, .g = STATUS_BRT/2, .b = 0};
+static const struct led_rgb COLOR_PURPLE = {.r = STATUS_BRT, .g = 0,          .b = STATUS_BRT};
 
 /* Write a single pixel and flush.  Pixels outside the left-half chain are
  * silently ignored to protect against misconfiguration. */
@@ -245,8 +248,6 @@ static void battery_off_work_handler(struct k_work *work)
 
 static bool underglow_was_on = false;
 static bool suspended_by_us = false;
-
-static void refresh_underglow_suspension(void);
 
 
 /* ======================================================================
