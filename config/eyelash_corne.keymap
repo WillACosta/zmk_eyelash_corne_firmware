@@ -29,15 +29,6 @@
 
 / {
     behaviors {
-        td_media: td_media {
-            compatible = "zmk,behavior-tap-dance";
-            display-name = "Symbol/Media Layer TD";
-            #binding-cells = <0>;
-            bindings = <&mo 1>, <&mo 3>;
-
-            tapping-term-ms = <135>;
-        };
-
         hrm_left: hrm_left {
             compatible = "zmk,behavior-hold-tap";
             label = "HRM_LEFT";
@@ -75,6 +66,15 @@
             tapping-term-ms = <215>;
             flavor = "balanced";
             require-prior-idle-ms = <100>;
+        };
+
+        td_media: td_media {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_MEDIA";
+            #binding-cells = <0>;
+            bindings = <&mo 1>, <&mo 3>;
+
+            tapping-term-ms = <135>;
         };
     };
 
