@@ -2,12 +2,20 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
+    - name: prospector
+      url-base: https://github.com/t-ogura
     - name: cormoran
       url-base: https://github.com/cormoran
+
   projects:
     - name: eyelash_corne
       url: https://github.com/a741725193/zmk-new_corne
       revision: main
+    - name: prospector-zmk-module
+      remote: prospector
+      revision: v2.2.1
+      path: modules/prospector-zmk-module
+
     - name: zmk
       remote: cormoran
       revision: v0.3-branch+dya
