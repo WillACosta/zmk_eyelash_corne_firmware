@@ -193,7 +193,7 @@
 &trans       &kp EXCL  &kp AT        &kp HASH       &kp DLLR          &kp PRCNT                                    &mmv MOVE_UP                     &kp CARET  &kp AMPS   &kp ASTRK   &kp LPAR    &kp RPAR  &trans
 &bootloader  &trans    &kp SLASH     &kp BACKSLASH  &kp LEFT_BRACKET  &kp RIGHT_BRACKET            &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp MINUS  &kp EQUAL  &kp GRAVE   &kp PERIOD  &trans    &trans
 &trans       &trans    &kp QUESTION  &kp PIPE       &kp LEFT_BRACE    &kp RIGHT_BRACE    &trans                    &mmv MOVE_DOWN                   &kp UNDER  &kp PLUS   &kp TILDE   &kp COMMA   &trans    &trans
-                                     &trans         &none             &trans                                                                        &trans     &mo 5      &kp DELETE
+                                     &trans         &trans            &trans                                                                        &trans     &mo 5      &kp DELETE
             >;
         };
 
@@ -203,7 +203,7 @@
 &trans  &kp N1  &kp N2  &kp N3  &kp N4   &kp N5                                 &mmv MOVE_UP                     &kp N6          &kp N7          &kp N8        &kp N9     &kp N0  &trans
 &trans  &kp F2  &kp F5  &trans  &kp F11  &kp F12                &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT  &trans  &bootloader
 &trans  &trans  &trans  &trans  &trans   &trans   &kp C_MUTE                    &mmv MOVE_DOWN                   &kp HOME        &kp END         &trans        &trans     &trans  &trans
-                        &trans  &mo 4    &trans                                                                  &trans          &none           &trans
+                        &trans  &mo 4    &trans                                                                  &trans          &trans          &trans
             >;
         };
 
@@ -213,7 +213,7 @@
 &trans  &trans                &trans                &trans          &trans             &trans                             &trans          &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &kp C_PREVIOUS  &kp C_PLAY_PAUSE   &kp C_NEXT                 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans                &trans                &kp K_MUTE      &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &trans            &trans          &trans  &trans  &trans  &trans  &trans  &trans
-                                                    &trans          &none              &trans                                             &trans  &trans  &trans
+                                                    &trans          &trans             &trans                                             &trans  &trans  &trans
             >;
         };
 
@@ -223,7 +223,7 @@
 &trans  &trans           &trans           &trans           &trans           &trans                                         &mmv MOVE_UP                     &mkp MB4        &mkp LCLK       &mkp MCLK     &mkp RCLK        &trans  &trans
 &trans  &rgb_ug RGB_HUI  &rgb_ug RGB_EFF  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI  &rgb_ug RGB_ON                 &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &trans  &trans
 &trans  &rgb_ug RGB_HUD  &rgb_ug RGB_EFR  &rgb_ug RGB_SAD  &rgb_ug RGB_BRD  &rgb_ug RGB_OFF  &kp C_MUTE                    &mmv MOVE_DOWN                   &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &trans  &trans
-                                          &trans           &none            &trans                                                                          &trans          &none           &trans
+                                          &trans           &trans           &trans                                                                          &trans          &trans          &trans
             >;
         };
 
