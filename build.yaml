@@ -10,5 +10,5 @@ include:
     artifact-name: eyelash_corne_left
 
   - board: nice_nano_v2
-    shied: settings_reset
+    shield: settings_reset
     artifact-name: eyelash_corne_reset
