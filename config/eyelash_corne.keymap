@@ -31,7 +31,7 @@
     behaviors {
         td_media: td_media {
             compatible = "zmk,behavior-tap-dance";
-            display-name = "Shift/Caps Lock Tap Dance";
+            display-name = "Symbol/Media Layer TD";
             #binding-cells = <0>;
             bindings = <&mo 1>, <&mo 3>;
         };
@@ -218,21 +218,13 @@
         };
 
         device_layer {
+            display-name = "dev";
             bindings = <
 &trans          &trans        &trans        &trans        &trans        &trans                          &trans          &trans  &trans  &trans  &trans  &trans  &trans
 &bt BT_CLR      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4            &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &bt BT_CLR_ALL  &out OUT_TOG  &trans        &trans        &trans        &trans        &trans            &trans          &trans  &trans  &trans  &trans  &trans  &trans
                                             &trans        &trans        &trans                                          &trans  &trans  &trans
             >;
-        };
-    };
-
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-
-        device_layer {
-            if-layers = <1 2>;
-            then-layer = <4>;
         };
     };
 };
