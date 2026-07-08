@@ -6,11 +6,14 @@ manifest:
       url-base: https://github.com/t-ogura
     - name: cormoran
       url-base: https://github.com/cormoran
+    - name: prospector
+      url-base: https://github.com/t-ogura
 
   projects:
     - name: eyelash_corne
       url: https://github.com/a741725193/zmk-new_corne
       revision: main
+
     - name: prospector-zmk-module
       remote: prospector
       revision: v2.2.1
