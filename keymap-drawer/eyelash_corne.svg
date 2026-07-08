@@ -619,12 +619,20 @@ rect.held, rect.combo.held {
 <use href="#mdi:keyboard-return" xlink:href="#mdi:keyboard-return" x="271" y="85" height="18" width="18.0" class="combo enter tap glyph mdi:keyboard-return"/>
 </g>
 <g class="combo combopos-9">
-<path d="M241,175 l30,23" class="combo"/>
-<path d="M241,175 l-30,-23" class="combo"/>
-<rect rx="6" ry="6" x="227" y="162" width="28" height="26" class="combo"/>
-<a href="#media">
-<text x="241" y="175" class="combo tap layer-activator">media</text>
-</a><text x="241" y="186" class="combo hold">toggle</text>
+<rect rx="6" ry="6" x="42" y="64" width="28" height="26" class="combo"/>
+<use href="#mdi:backspace-reverse-outline" xlink:href="#mdi:backspace-reverse-outline" x="47" y="68" height="18" width="18.0" class="combo tap glyph mdi:backspace-reverse-outline"/>
+</g>
+<g class="combo combopos-10">
+<path d="M140,37 l-38,8" class="combo"/>
+<path d="M140,37 l38,-6" class="combo"/>
+<rect rx="6" ry="6" x="126" y="24" width="28" height="26" class="combo"/>
+<use href="#mdi:keyboard-tab" xlink:href="#mdi:keyboard-tab" x="131" y="28" height="18" width="18.0" class="combo tap glyph mdi:keyboard-tab"/>
+</g>
+<g class="combo combopos-11">
+<path d="M196,32 l-37,1" class="combo"/>
+<path d="M196,32 l37,1" class="combo"/>
+<rect rx="6" ry="6" x="182" y="19" width="28" height="26" class="combo"/>
+<use href="#mdi:keyboard-tab" xlink:href="#mdi:keyboard-tab" x="187" y="23" height="18" width="18.0" class="combo tap glyph mdi:keyboard-tab"/>
 </g>
 </g>
 </g>
@@ -1151,10 +1159,6 @@ rect.held, rect.combo.held {
 <g class="combo combopos-0">
 <rect rx="6" ry="6" x="686" y="25" width="28" height="26" class="combo"/>
 <text x="700" y="38" class="combo tap">PgUp</text>
-</g>
-<g class="combo combopos-1">
-<rect rx="6" ry="6" x="854" y="29" width="28" height="26" class="combo"/>
-<use href="#mdi:backspace-reverse-outline" xlink:href="#mdi:backspace-reverse-outline" x="859" y="33" height="18" width="18.0" class="combo tap glyph mdi:backspace-reverse-outline"/>
 </g>
 </g>
 </g>

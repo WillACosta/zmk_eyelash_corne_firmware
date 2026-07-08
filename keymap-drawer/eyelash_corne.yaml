@@ -321,9 +321,12 @@ combos:
 - p: [17, 18]
   k: {t: '$$mdi:keyboard-return$$', type: enter}
   l: [base]
-- p: [11, 10]
+- p: [13, 1]
   k: $$mdi:backspace-reverse-outline$$
-  l: [num]
-- p: [43, 31]
-  k: {t: media, h: toggle}
+  l: [base]
+- p: [1, 2, 3]
+  k: Ctl+$$mdi:keyboard-tab$$
+  l: [base]
+- p: [2, 3, 4]
+  k: Alt+$$mdi:keyboard-tab$$
   l: [base]
