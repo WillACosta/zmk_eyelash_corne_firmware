@@ -24,11 +24,64 @@ draw_config:
       font-size: 12px;
       font-weight: bold;
       text-rendering: optimizeLegibility;
+      background: #0f1013;
+      fill: #e4e4e7;
     }
 
-    /* Color accent for held keys */
+    /* Space Black Theme - Black transparent keycaps and acrylic sandwich case */
+    rect.key {
+      fill: #16171a;
+      stroke: #3c3f47;
+      stroke-width: 1.2px;
+      rx: 5px;
+      ry: 5px;
+    }
+
+    /* Key side styling for 3D look (translucent keycap effect) */
+    rect.side {
+      fill: #0c0d0f;
+      stroke: #2a2c33;
+    }
+
+    /* Combos - dark translucent style */
+    rect.combo {
+      fill: #202228;
+      stroke: #484b54;
+      stroke-width: 1px;
+    }
+
+    path.combo {
+      stroke: #484b54;
+    }
+
+    /* Held keys - glowing ice blue/cyan accent */
     rect.held, rect.combo.held {
-        fill: #ffc;
+      fill: #122b35;
+      stroke: #00e5ff;
+    }
+
+    /* Text coloring overrides for dark theme */
+    text {
+      fill: #e4e4e7;
+    }
+
+    text.trans {
+      fill: #52525b;
+    }
+
+    text.label {
+      fill: #00e5ff;
+      stroke: #0f1013;
+      stroke-width: 4px;
+      paint-order: stroke;
+    }
+
+    text.hold {
+      fill: #00e5ff;
+    }
+
+    text.shifted {
+      fill: #a1a1aa;
     }
 
     /* Technique borrowed and extended from https://github.com/englmaxi/zmk-config/blob/master/keymap-drawer/config.yaml */

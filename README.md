@@ -1,12 +1,37 @@
 ## Corne Keyboard Config
 
-This is my custom [ZMK](https://zmk.dev/) keymap config for the **low profile** Corne (3x6) wireless keyboard.
+This is my custom [ZMK](https://zmk.dev/) keymap config for the low profile Corne (3x6) wireless keyboard.
 
-<img src="./assets/corne_kbd.jpg" style="border-radius: 60px"/>
+<img src="./docs/gallery/header.JPG" style="border-radius: 5px"/>
+
+See the [gallery](./docs/gallery) for more images.
 
 ---
 
+## Keymap Diagram
+
 ![keymap image](./keymap-drawer/eyelash_corne.svg)
+
+## Firmware Configs and Decisions
+
+Key Bluetooth and Prospector configurations:
+
+```ini
+# Bluetooth configurations
+CONFIG_BT_CTLR_TX_PWR_PLUS_8=y
+CONFIG_ZMK_BLE_EXPERIMENTAL_CONN=y
+CONFIG_ZMK_BLE_KEYBOARD_REPORT_QUEUE_SIZE=32
+
+# Prospector Scanner integration
+CONFIG_ZMK_STATUS_ADVERTISEMENT=y
+CONFIG_ZMK_STATUS_ADV_KEYBOARD_NAME="Corne Kbd"
+CONFIG_ZMK_STATUS_ADV_CENTRAL_SIDE="LEFT"
+CONFIG_PROSPECTOR_EXPECTED_PERIPHERAL_COUNT=1
+
+...
+```
+
+> See [config/eyelash_corne.conf](./config/eyelash_corne.conf) for the full configuration options overview.
 
 ## Flashing instructions
 
