@@ -63,7 +63,7 @@ layers:
   - (
   - )
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:backspace$$', type: backspace}
+  - $$mdi:backspace-reverse-outline$$
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: /, s: '?'}
   - {t: \, s: '|'}
