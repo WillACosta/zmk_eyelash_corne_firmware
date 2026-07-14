@@ -195,10 +195,10 @@
         symbol_layer {
             display-name = "sym";
             bindings = <
-&trans         &kp EXCL  &kp AT        &kp HASH       &kp DLLR          &kp PRCNT                                    &mmv MOVE_UP                     &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR    &kp RPAR  &trans
-&kp BACKSPACE  &trans    &kp SLASH     &kp BACKSLASH  &kp LEFT_BRACKET  &kp RIGHT_BRACKET            &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp MINUS  &kp EQUAL  &kp GRAVE  &kp PERIOD  &trans    &trans
-&trans         &trans    &kp QUESTION  &kp PIPE       &kp LEFT_BRACE    &kp RIGHT_BRACE    &trans                    &mmv MOVE_DOWN                   &kp UNDER  &kp PLUS   &kp TILDE  &kp COMMA   &trans    &trans
-                                       &trans         &none             &trans                                                                        &trans     &trans     &trans
+&trans      &kp EXCL  &kp AT        &kp HASH       &kp DLLR          &kp PRCNT                                    &mmv MOVE_UP                     &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR    &kp RPAR  &trans
+&kp DELETE  &trans    &kp SLASH     &kp BACKSLASH  &kp LEFT_BRACKET  &kp RIGHT_BRACKET            &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp MINUS  &kp EQUAL  &kp GRAVE  &kp PERIOD  &trans    &trans
+&trans      &trans    &kp QUESTION  &kp PIPE       &kp LEFT_BRACE    &kp RIGHT_BRACE    &trans                    &mmv MOVE_DOWN                   &kp UNDER  &kp PLUS   &kp TILDE  &kp COMMA   &trans    &trans
+                                    &trans         &none             &trans                                                                        &trans     &trans     &trans
             >;
         };
 
