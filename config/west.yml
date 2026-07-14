@@ -6,6 +6,8 @@ manifest:
       url-base: https://github.com/cormoran
     - name: prospector
       url-base: https://github.com/WillACosta
+    - name: hitsmaxft
+      url-base: https://github.com/hitsmaxft
 
   projects:
     - name: eyelash_corne
@@ -16,6 +18,10 @@ manifest:
       remote: prospector
       revision: main
       path: modules/prospector-zmk-module
+    - name: zmk-rgbled-widget
+      remote: hitsmaxft
+      revision: main
+      path: modules/zmk-rgbled-widget
 
     - name: zmk
       remote: cormoran
