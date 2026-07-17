@@ -19,8 +19,8 @@ manifest:
       revision: main
       path: modules/prospector-zmk-module
     - name: zmk-rgbled-widget
-      remote: hitsmaxft
-      revision: main
+      url: https://github.com/WillACosta/zmk-smart-rgbled-widget
+      revision: fix-compilation
       path: modules/zmk-rgbled-widget
 
     - name: zmk
