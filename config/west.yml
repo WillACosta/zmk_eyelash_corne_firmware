@@ -18,8 +18,8 @@ manifest:
       path: modules/prospector-zmk-module
 
     - name: zmk-rgbled-widget
-      remote: willACosta
-      revision: feat/update-leds
+      remote: hitsmaxft
+      revision: main
       path: modules/zmk-rgbled-widget
 
     - name: zmk
