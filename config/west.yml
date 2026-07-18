@@ -4,10 +4,8 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: cormoran
       url-base: https://github.com/cormoran
-    - name: prospector
+    - name: willACosta
       url-base: https://github.com/WillACosta
-    - name: hitsmaxft
-      url-base: https://github.com/hitsmaxft
 
   projects:
     - name: eyelash_corne
@@ -15,13 +13,13 @@ manifest:
       revision: main
 
     - name: prospector-zmk-module
-      remote: prospector
+      remote: willACosta
       revision: main
       path: modules/prospector-zmk-module
 
     - name: zmk-rgbled-widget
-      url: https://github.com/WillACosta/zmk-rgbled-widget
-      revision: fix-compilation
+      remote: willACosta
+      revision: main
       path: modules/zmk-rgbled-widget
 
     - name: zmk

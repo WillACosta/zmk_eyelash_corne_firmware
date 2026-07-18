@@ -85,30 +85,28 @@
 
         batt_ws: battery_ws2812 {
             compatible = "zmk,behavior-ws2812-widget";
-            pattern-id = <0>;
-            #binding-cells = <0>;
             indicate-battery;
+            #binding-cells = <0>;
         };
 
         conn_ws: connectivity_ws2812 {
             compatible = "zmk,behavior-ws2812-widget";
             indicate-connectivity;
-            pattern-id = <0>;
             #binding-cells = <0>;
         };
 
         layer_ws: layer_ws2812 {
             compatible = "zmk,behavior-ws2812-widget";
             indicate-layer;
-            use-shared;  // Allow borrowing other LEDs
+            use-shared;
             #binding-cells = <0>;
         };
 
         led_pulse: led_pulse_cyan {
             compatible = "zmk,behavior-ws2812-widget";
             led-index = <2>;
-            color = <6>;      // Cyan
-            pattern-id = <2>; // Pulse pattern
+            color = <6>;
+            pattern-id = <2>;
             duration-ms = <2000>;
             #binding-cells = <0>;
         };
@@ -116,8 +114,8 @@
         led_flash: led_flash_red {
             compatible = "zmk,behavior-ws2812-widget";
             led-index = <1>;
-            color = <1>;      // Red
-            pattern-id = <1>; // Blink pattern
+            color = <1>;
+            pattern-id = <1>;
             duration-ms = <1000>;
             #binding-cells = <0>;
         };
@@ -266,7 +264,7 @@
         device_layer {
             display-name = "dev";
             bindings = <
-&bootloader     &batt_ws &conn_ws      &trans      &trans        &trans                                      &mmv MOVE_UP                     &mkp MB1        &mkp LCLK       &mkp RCLK     &mkp MB2         &trans  &bootloader
+&bootloader     &ind_bat &ind_conn &batt_ws &conn_ws &trans                                      &mmv MOVE_UP                     &mkp MB1        &mkp LCLK       &mkp RCLK     &mkp MB2         &trans  &bootloader
 &bt BT_CLR      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &trans  &trans
 &bt BT_CLR_ALL  &out OUT_TOG  &trans        &trans        &trans        &trans        &kp C_MUTE                    &mmv MOVE_DOWN                   &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &trans  &trans
                                             &trans        &none         &trans                                                                       &trans          &none           &trans
