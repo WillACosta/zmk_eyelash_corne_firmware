@@ -1,7 +1,7 @@
 layout: {zmk_keyboard: eyelash_corne}
 layers:
   base:
-  - {t: '$$mdi:transfer$$', type: trans}
+  - $$mdi:keyboard-tab$$
   - Q
   - W
   - E
@@ -13,7 +13,7 @@ layers:
   - I
   - O
   - P
-  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: '$$mdi:backspace$$', type: backspace}
   - {t: '$$mdi:keyboard-esc$$', h: '$$mdi:apple-keyboard-shift$$'}
   - A
   - {t: S, h: '$$mdi:apple-keyboard-option$$'}
@@ -50,7 +50,7 @@ layers:
   - '&td_extra'
   - $$mdi:apple-keyboard-option$$
   sym:
-  - {t: '$$mdi:transfer$$', type: trans}
+  - $$mdi:backspace-reverse-outline$$
   - '!'
   - '@'
   - '#'
@@ -62,8 +62,8 @@ layers:
   - '*'
   - (
   - )
-  - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:backspace-reverse-outline$$
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: /, s: '?'}
   - {t: \, s: '|'}
@@ -198,10 +198,10 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   dev:
   - $$mdi:progress-download$$
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - '&ind_bat'
+  - '&ind_con'
+  - '&batt_ws'
+  - '&conn_ws'
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:menu-up$$', s: '$$mdi:mouse$$'}
   - '&mkp MB1'

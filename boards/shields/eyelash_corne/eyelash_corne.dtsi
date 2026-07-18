@@ -12,9 +12,13 @@
     chosen {
         zmk,kscan = &kscan0;
         zmk,battery = &vbatt;
-        zmk,underglow = &led_strip;
-        zmk,backlight = &backlight;
+        // zmk,underglow = &led_strip;
+        widget_rgb = &led_strip;
         zmk,physical-layout = &default_layout;
+    };
+
+    aliases {
+        status-ws2812 = &led_strip;
     };
 
     vbatt: vbatt {
@@ -157,5 +161,7 @@ nice_view_spi: &spi0 {
         spi-one-frame = <0x70>;
         spi-zero-frame = <0x40>;
         color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
+        reset-delay = <280>;
+        status = "okay";
     };
 };
