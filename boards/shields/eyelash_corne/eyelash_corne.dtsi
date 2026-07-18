@@ -14,7 +14,7 @@
         zmk,battery = &vbatt;
         // zmk,underglow = &led_strip;
         widget_rgb = &led_strip;
-        zmk,backlight = &backlight;
+        // zmk,backlight = &backlight;
         zmk,physical-layout = &default_layout;
     };
 

@@ -85,6 +85,7 @@
 
         batt_ws: battery_ws2812 {
             compatible = "zmk,behavior-ws2812-widget";
+            pattern-id = <0>;
             #binding-cells = <1>;
             indicate-battery;
         };
@@ -92,6 +93,7 @@
         conn_ws: connectivity_ws2812 {
             compatible = "zmk,behavior-ws2812-widget";
             indicate-connectivity;
+            pattern-id = <0>;
             #binding-cells = <1>;
         };
 
