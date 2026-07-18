@@ -198,10 +198,10 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   dev:
   - $$mdi:progress-download$$
+  - '&ind_bat'
+  - '&ind_conn'
   - '&batt_ws'
   - '&conn_ws'
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:menu-up$$', s: '$$mdi:mouse$$'}
   - '&mkp MB1'
