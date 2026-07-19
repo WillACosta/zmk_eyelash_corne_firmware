@@ -19,7 +19,7 @@ manifest:
 
     - name: zmk-rgbled-widget
       remote: willACosta
-      revision: feat/update-leds
+      revision: main
       path: modules/zmk-rgbled-widget
 
     - name: zmk
