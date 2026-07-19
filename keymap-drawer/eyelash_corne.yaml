@@ -1,7 +1,7 @@
 layout: {zmk_keyboard: eyelash_corne}
 layers:
   base:
-  - $$mdi:keyboard-tab$$
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - Q
   - W
   - E
@@ -13,7 +13,7 @@ layers:
   - I
   - O
   - P
-  - {t: '$$mdi:backspace$$', type: backspace}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:keyboard-esc$$', h: '$$mdi:apple-keyboard-shift$$'}
   - A
   - {t: S, h: '$$mdi:apple-keyboard-option$$'}
@@ -50,7 +50,7 @@ layers:
   - '&td_extra'
   - $$mdi:apple-keyboard-option$$
   sym:
-  - $$mdi:backspace-reverse-outline$$
+  - {t: '$$mdi:transfer$$', type: trans}
   - '!'
   - '@'
   - '#'
@@ -62,8 +62,8 @@ layers:
   - '*'
   - (
   - )
-  - $$mdi:backspace-reverse-outline$$
   - {t: '$$mdi:transfer$$', type: trans}
+  - $$mdi:backspace-reverse-outline$$
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: /, s: '?'}
   - {t: \, s: '|'}
@@ -197,7 +197,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   dev:
-  - $$mdi:progress-download$$
+  - {t: '$$mdi:transfer$$', type: trans}
   - '&ind_bat'
   - '&ind_con'
   - '&batt_ws'
@@ -209,7 +209,7 @@ layers:
   - $$mdi:mouse-right-click-outline$$
   - '&mkp MB2'
   - {t: '$$mdi:transfer$$', type: trans}
-  - $$mdi:progress-download$$
+  - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:bluetooth-off$$
   - {h: '1', s: '$$mdi:bluetooth-connect$$'}
   - {h: '2', s: '$$mdi:bluetooth-connect$$'}
@@ -259,7 +259,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - $$mdi:progress-download$$
   - RGB HUI
   - RGB EFF
   - RGB SAI
@@ -273,7 +273,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - $$mdi:progress-download$$
   - {t: '$$mdi:transfer$$', type: trans}
   - RGB HUD
   - RGB EFR
