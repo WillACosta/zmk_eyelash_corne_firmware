@@ -119,7 +119,6 @@
             duration-ms = <1000>;
             #binding-cells = <0>;
         };
-
     };
 
     scroll_encoder: scroll_encoder {
@@ -224,7 +223,7 @@
         base_layer {
             display-name = "base";
             bindings = <
-&kp TAB                &kp Q  &kp W                 &kp E                     &kp R                   &kp T                             &kp UP                &kp Y       &kp U                    &kp I                      &kp O                  &kp P          &kp BACKSPACE
+&none                  &kp Q  &kp W                 &kp E                     &kp R                   &kp T                             &kp UP                &kp Y       &kp U                    &kp I                      &kp O                  &kp P          &none
 &mt LEFT_SHIFT ESCAPE  &kp A  &hrm_left LEFT_ALT S  &hrm_left LEFT_CONTROL D  &hrm_left LEFT_SHIFT F  &kp G                   &kp LEFT  &kp ENTER  &kp RIGHT  &kp H       &hrm_right LEFT_SHIFT J  &hrm_right LEFT_CONTROL K  &hrm_right LEFT_ALT L  &kp SEMICOLON  &kp APOS
 &kp LEFT_CONTROL       &kp Z  &kp X                 &kp C                     &kp V                   &kp B      &kp SPACE              &kp DOWN              &kp N       &kp M                    &kp COMMA                  &kp DOT                &kp FSLH       &mt LEFT_CONTROL ESCAPE
                                                     &kp LEFT_GUI              &td_media               &kp SPACE                                               &kp RETURN  &td_extra                &kp LEFT_ALT
@@ -234,10 +233,10 @@
         symbol_layer {
             display-name = "sym";
             bindings = <
-&kp DELETE  &kp EXCL  &kp AT        &kp HASH       &kp DLLR          &kp PRCNT                                    &mmv MOVE_UP                     &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR    &kp RPAR  &kp DELETE
-&trans      &trans    &kp SLASH     &kp BACKSLASH  &kp LEFT_BRACKET  &kp RIGHT_BRACKET            &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp MINUS  &kp EQUAL  &kp GRAVE  &kp PERIOD  &trans    &trans
-&trans      &trans    &kp QUESTION  &kp PIPE       &kp LEFT_BRACE    &kp RIGHT_BRACE    &trans                    &mmv MOVE_DOWN                   &kp UNDER  &kp PLUS   &kp TILDE  &kp COMMA   &trans    &trans
-                                    &trans         &none             &trans                                                                        &trans     &trans     &trans
+&trans   &kp EXCL  &kp AT        &kp HASH       &kp DLLR          &kp PRCNT                                    &mmv MOVE_UP                     &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR    &kp RPAR  &trans
+&kp DEL  &trans    &kp SLASH     &kp BACKSLASH  &kp LEFT_BRACKET  &kp RIGHT_BRACKET            &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp MINUS  &kp EQUAL  &kp GRAVE  &kp PERIOD  &trans    &trans
+&trans   &trans    &kp QUESTION  &kp PIPE       &kp LEFT_BRACE    &kp RIGHT_BRACE    &trans                    &mmv MOVE_DOWN                   &kp UNDER  &kp PLUS   &kp TILDE  &kp COMMA   &trans    &trans
+                                 &trans         &none             &trans                                                                        &trans     &trans     &trans
             >;
         };
 
@@ -264,7 +263,7 @@
         device_layer {
             display-name = "dev";
             bindings = <
-&bootloader     &ind_bat &ind_con &batt_ws &conn_ws &trans                                      &mmv MOVE_UP                     &mkp MB1        &mkp LCLK       &mkp RCLK     &mkp MB2         &trans  &bootloader
+&trans          &ind_bat      &ind_con      &batt_ws      &conn_ws      &trans                                      &mmv MOVE_UP                     &mkp MB1        &mkp LCLK       &mkp RCLK     &mkp MB2         &trans  &trans
 &bt BT_CLR      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &trans  &trans
 &bt BT_CLR_ALL  &out OUT_TOG  &trans        &trans        &trans        &trans        &kp C_MUTE                    &mmv MOVE_DOWN                   &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &trans  &trans
                                             &trans        &none         &trans                                                                       &trans          &none           &trans
@@ -274,10 +273,10 @@
         extra_layer {
             display-name = "ext";
             bindings = <
-&trans  &trans           &trans           &trans           &trans           &trans                                         &mmv MOVE_UP                     &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &rgb_ug RGB_HUI  &rgb_ug RGB_EFF  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI  &rgb_ug RGB_ON                 &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &rgb_ug RGB_HUD  &rgb_ug RGB_EFR  &rgb_ug RGB_SAD  &rgb_ug RGB_BRD  &rgb_ug RGB_OFF  &kp C_MUTE                    &mmv MOVE_DOWN                   &trans  &trans  &trans  &trans  &trans  &trans
-                                          &trans           &trans           &trans                                                                          &trans  &none   &trans
+&trans       &trans           &trans           &trans           &trans           &trans                                         &mmv MOVE_UP                     &trans  &trans  &trans  &trans  &trans  &trans
+&bootloader  &rgb_ug RGB_HUI  &rgb_ug RGB_EFF  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI  &rgb_ug RGB_ON                 &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &trans  &trans  &trans  &trans  &trans  &bootloader
+&trans       &rgb_ug RGB_HUD  &rgb_ug RGB_EFR  &rgb_ug RGB_SAD  &rgb_ug RGB_BRD  &rgb_ug RGB_OFF  &kp C_MUTE                    &mmv MOVE_DOWN                   &trans  &trans  &trans  &trans  &trans  &trans
+                                               &trans           &trans           &trans                                                                          &trans  &none   &trans
             >;
         };
     };
