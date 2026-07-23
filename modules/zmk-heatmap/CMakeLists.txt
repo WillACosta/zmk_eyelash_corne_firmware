@@ -1,4 +1,2 @@
-if(CONFIG_ZMK_HEATMAP)
-  target_sources(app PRIVATE src/zmk_heatmap.c)
-  target_include_directories(app PRIVATE include)
-endif()
+target_sources_ifdef(CONFIG_ZMK_HEATMAP app PRIVATE src/zmk_heatmap.c)
+zephyr_library_include_directories(include)

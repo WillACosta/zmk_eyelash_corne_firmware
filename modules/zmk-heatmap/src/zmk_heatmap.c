@@ -6,22 +6,34 @@
 #include <zephyr/kernel.h>
 #include <zephyr/logging/log.h>
 #include <zmk/events/position_state_changed.h>
-#include <zmk/keymap.h>
+#include <zmk/events/layer_state_changed.h>
 #include <zmk/event_manager.h>
 
 LOG_MODULE_REGISTER(zmk_heatmap, CONFIG_ZMK_HEATMAP_LOG_LEVEL);
 
-static int zmk_heatmap_listener_cb(const zmk_event_t *eh) {
+static uint8_t active_layer = 0;
+
+static int zmk_heatmap_layer_listener_cb(const zmk_event_t *eh) {
+    struct zmk_layer_state_changed *ev = as_zmk_layer_state_changed(eh);
+    if (ev != NULL && ev->state) {
+        active_layer = ev->layer;
+    }
+    return ZMK_EV_EVENT_BUBBLE;
+}
+
+ZMK_LISTENER(zmk_heatmap_layer, zmk_heatmap_layer_listener_cb);
+ZMK_SUBSCRIPTION(zmk_heatmap_layer, zmk_layer_state_changed);
+
+static int zmk_heatmap_position_listener_cb(const zmk_event_t *eh) {
     struct zmk_position_state_changed *ev = as_zmk_position_state_changed(eh);
     if (ev != NULL) {
         if (ev->state) {
-            uint8_t layer = zmk_keymap_highest_layer_active();
             int64_t timestamp = k_uptime_get();
-            LOG_INF("HM:%u,%u,%lld", ev->position, layer, timestamp);
+            LOG_INF("HM:%u,%u,%lld", ev->position, active_layer, timestamp);
         }
     }
     return ZMK_EV_EVENT_BUBBLE;
 }
 
-ZMK_LISTENER(zmk_heatmap, zmk_heatmap_listener_cb);
-ZMK_SUBSCRIPTION(zmk_heatmap, zmk_position_state_changed);
+ZMK_LISTENER(zmk_heatmap_position, zmk_heatmap_position_listener_cb);
+ZMK_SUBSCRIPTION(zmk_heatmap_position, zmk_position_state_changed);
