@@ -1,0 +1,16 @@
+menu "ZMK Heatmap"
+
+config ZMK_HEATMAP
+	bool "Enable ZMK Heatmap key event logging"
+	default y
+	help
+	  Enable logging of key matrix position press events for heatmap generation.
+
+config ZMK_HEATMAP_LOG_LEVEL
+	int "ZMK Heatmap log level"
+	default 3
+	depends on ZMK_HEATMAP
+	help
+	  Log level for ZMK Heatmap module (3 = LOG_LEVEL_INF).
+
+endmenu

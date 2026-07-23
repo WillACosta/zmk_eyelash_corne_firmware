@@ -1,7 +1,8 @@
 build/
 zmk/
-modules/
-tools/
 .west/
 .env
 .DS_Store
+keylog.csv
+heatmap.html
+heatmap.svg

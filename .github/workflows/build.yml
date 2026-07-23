@@ -5,6 +5,9 @@ on:
     paths:
       - "config/*"
       - "boards/*"
+      - "modules/**"
+      - "zephyr/*"
+
 
 jobs:
   build:

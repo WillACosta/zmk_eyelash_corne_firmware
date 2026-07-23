@@ -1,3 +1,7 @@
+name: zmk-config
 build:
+  cmake: modules/zmk-heatmap
+  kconfig: modules/zmk-heatmap/Kconfig
   settings:
      board_root: .
+
