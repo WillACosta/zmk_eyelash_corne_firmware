@@ -322,7 +322,7 @@ combos:
   k: {t: '$$mdi:keyboard-return$$', type: enter}
   l: [base]
 - p: [13, 1]
-  k: $$mdi:backspace-reverse-outline$$
+  k: $$mdi:keyboard-tab$$
   l: [base]
 - p: [1, 2, 3]
   k: Ctl+$$mdi:keyboard-tab$$

@@ -668,7 +668,7 @@ text.shifted {
 </g>
 <g class="combo combopos-9">
 <rect rx="6" ry="6" x="42" y="64" width="28" height="26" class="combo"/>
-<use href="#mdi:backspace-reverse-outline" xlink:href="#mdi:backspace-reverse-outline" x="47" y="68" height="18" width="18.0" class="combo tap glyph mdi:backspace-reverse-outline"/>
+<use href="#mdi:keyboard-tab" xlink:href="#mdi:keyboard-tab" x="47" y="68" height="18" width="18.0" class="combo tap glyph mdi:keyboard-tab"/>
 </g>
 <g class="combo combopos-10">
 <path d="M140,37 l-38,8" class="combo"/>
