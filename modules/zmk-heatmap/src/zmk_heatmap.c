@@ -6,13 +6,17 @@
 #include <zephyr/kernel.h>
 #include <zephyr/logging/log.h>
 #include <zmk/events/position_state_changed.h>
-#include <zmk/events/layer_state_changed.h>
 #include <zmk/event_manager.h>
+
+#if IS_ENABLED(CONFIG_ZMK_KEYMAP)
+#include <zmk/events/layer_state_changed.h>
+#endif
 
 LOG_MODULE_REGISTER(zmk_heatmap, CONFIG_ZMK_HEATMAP_LOG_LEVEL);
 
 static uint8_t active_layer = 0;
 
+#if IS_ENABLED(CONFIG_ZMK_KEYMAP)
 static int zmk_heatmap_layer_listener_cb(const zmk_event_t *eh) {
     struct zmk_layer_state_changed *ev = as_zmk_layer_state_changed(eh);
     if (ev != NULL && ev->state) {
@@ -23,6 +27,7 @@ static int zmk_heatmap_layer_listener_cb(const zmk_event_t *eh) {
 
 ZMK_LISTENER(zmk_heatmap_layer, zmk_heatmap_layer_listener_cb);
 ZMK_SUBSCRIPTION(zmk_heatmap_layer, zmk_layer_state_changed);
+#endif
 
 static int zmk_heatmap_position_listener_cb(const zmk_event_t *eh) {
     struct zmk_position_state_changed *ev = as_zmk_position_state_changed(eh);
