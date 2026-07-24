@@ -6,3 +6,5 @@ zmk/
 keylog.csv
 heatmap.html
 heatmap.svg
+.venv
+venv
