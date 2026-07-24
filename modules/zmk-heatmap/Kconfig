@@ -3,7 +3,6 @@ menu "ZMK Heatmap"
 config ZMK_HEATMAP
 	bool "Enable ZMK Heatmap key event logging"
 	default y
-	imply ZMK_USB_LOGGING
 	help
 	  Enable logging of key matrix position press events for heatmap generation.
 

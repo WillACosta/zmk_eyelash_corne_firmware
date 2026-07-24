@@ -12,8 +12,10 @@ The module is already included in `zephyr/module.yml` and enabled in `config/eye
 ```properties
 # === Heatmap Generator ===
 CONFIG_ZMK_HEATMAP=y
+CONFIG_SERIAL=y
 CONFIG_ZMK_USB_LOGGING=y
 ```
+
 
 
 When enabled, your keyboard logs keypress events over the USB serial console (CDC ACM) in real time whenever a key is pressed:
