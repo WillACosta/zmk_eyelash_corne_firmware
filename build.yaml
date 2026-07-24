@@ -1,13 +1,14 @@
 ---
 include:
   - board: nice_nano_v2
+    shield: eyelash_corne_left nice_view
+    artifact-name: eyelash_corne_left
+    snippet: zmk-usb-logging
+
+  - board: nice_nano_v2
     shield: eyelash_corne_right nice_view
     artifact-name: eyelash_corne_right
     cmake-args: -DCONFIG_ZMK_STATUS_ADVERTISEMENT=n
-
-  - board: nice_nano_v2
-    shield: eyelash_corne_left nice_view
-    artifact-name: eyelash_corne_left
 
   # - board: nice_nano_v2
   #   shield: settings_reset
